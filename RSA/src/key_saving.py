@@ -1,4 +1,5 @@
 import os
+
 def save_keys(private_key, public_key, usb_path, public_key_path, key_name):
     try:
         keys_folder = os.path.join(usb_path, "keys")

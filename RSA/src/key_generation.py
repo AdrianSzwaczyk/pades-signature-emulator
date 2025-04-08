@@ -1,5 +1,6 @@
+from Crypto.PublicKey import RSA
+
 def generate_rsa_keys():
-    from Crypto.PublicKey import RSA
     try:
         key = RSA.generate(4096) # 4096-bit RSA key
         private_key = key.export_key()

@@ -61,6 +61,38 @@ def generate_and_save_keys():
     
     progress_label.config(text="Keys saved!")
     messagebox.showinfo("Success", f"Encrypted private key saved to:\n{priv_key_path}\n\nPublic key saved to:\n{pub_key_path}")
+    
+def handle_generate_button_click():
+    def task():
+        generate_and_save_keys()
+        progress_label.config(text="")
+        root.config(cursor="")
+        root.update()
+        progress_bar.grid_remove()
+        progress_label.grid_remove()
+        pin_entry.config(state="normal")
+        key_name_entry.config(state="normal")
+        usb_path_entry.config(state="readonly")
+        pub_key_path_entry.config(state="normal")
+        generate_button.config(state="normal")
+        refresh_button.config(state="normal")
+        browse_button.config(state="normal")
+        progress_var.set(0)
+
+    root.config(cursor="wait")
+    progress_bar.grid(row=6, column=0, columnspan=3, padx=10, pady=5, sticky="ew")
+    progress_label.grid(row=7, column=0, columnspan=3, pady=5)
+    root.update()
+
+    pin_entry.config(state="disabled")
+    key_name_entry.config(state="disabled")
+    usb_path_entry.config(state="disabled")
+    pub_key_path_entry.config(state="disabled")
+    generate_button.config(state="disabled")
+    refresh_button.config(state="disabled")
+    browse_button.config(state="disabled")
+
+    threading.Thread(target=task).start()
 
 root = Tk()
 root.title("RSA Key Generator")
@@ -93,37 +125,6 @@ root.grid_columnconfigure(1, weight=1)
 progress_var = IntVar()
 progress_label = Label(root, text="Processing...")
 progress_bar = Progressbar(root, variable=progress_var, maximum=600000)
-
-def handle_generate_button_click():
-    def task():
-        generate_and_save_keys()
-        progress_label.config(text="")
-        root.config(cursor="")
-        root.update()
-        progress_bar.grid_remove()
-        progress_label.grid_remove()
-        pin_entry.config(state="normal")
-        key_name_entry.config(state="normal")
-        usb_path_entry.config(state="readonly")
-        pub_key_path_entry.config(state="normal")
-        generate_button.config(state="normal")
-        refresh_button.config(state="normal")
-        browse_button.config(state="normal")
-
-    root.config(cursor="wait")
-    progress_bar.grid(row=6, column=0, columnspan=3, padx=10, pady=5, sticky="ew")
-    progress_label.grid(row=7, column=0, columnspan=3, pady=5)
-    root.update()
-
-    pin_entry.config(state="disabled")
-    key_name_entry.config(state="disabled")
-    usb_path_entry.config(state="disabled")
-    pub_key_path_entry.config(state="disabled")
-    generate_button.config(state="disabled")
-    refresh_button.config(state="disabled")
-    browse_button.config(state="disabled")
-
-    threading.Thread(target=task).start()
 
 refresh_button = Button(root, text="Refresh USB Devices", command=update_usb_devices)
 refresh_button.grid(row=4, column=0, columnspan=3, padx=10, pady=5, sticky="ew")

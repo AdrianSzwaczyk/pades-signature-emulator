@@ -21,13 +21,13 @@ python -m venv .venv
 - On Windows:
 
 ```
-venv\Scripts\activate
+.venv\Scripts\activate
 ```
 
 - On macOS and Linux:
 
 ```
-source venv/bin/activate
+source .venv/bin/activate
 ```
 
 5. Install the required packages:
@@ -39,3 +39,7 @@ pip install -r requirements.txt
 ## Usage
 
 Run the application by executing the `gui.py` file.
+
+```
+python src/gui.py
+```

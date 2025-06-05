@@ -2,3 +2,6 @@
 *.pem
 .venv
 /RSA/src/__pycache__
+/PAdES/__pycache__
+/PAdES/src/__pycache__
+/test_pdf

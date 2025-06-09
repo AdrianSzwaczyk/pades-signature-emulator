@@ -12,6 +12,8 @@ def update_usb_devices():
     usb_path_entry['values'] = usb_devices
     if usb_devices:
         usb_path_entry.current(0)
+    else:
+        usb_path_entry.set("")
 
 def browse_public_key_path():
     initial_dir = pub_key_path_entry.get()

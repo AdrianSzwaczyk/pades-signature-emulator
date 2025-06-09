@@ -44,3 +44,5 @@ def update_usb_devices(usb_path_entry):
         usb_path_entry.set(auto_device)
     elif usb_devices:
         usb_path_entry.current(0)
+    else:
+        usb_path_entry.set("")

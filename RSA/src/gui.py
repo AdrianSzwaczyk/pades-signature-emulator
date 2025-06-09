@@ -50,19 +50,25 @@ def generate_and_save_keys():
         progress_bar.update_idletasks()
     
     progress_label.config(text="Encrypting private key...")
+    progress_label.update_idletasks()
     progress_bar["maximum"] = 600000
     private_key = encrypt_private_key(private_key, pin, progress_callback)
     if private_key is None:
         messagebox.showerror("Error", "Encryption failed")
         return
     
-    priv_key_path, pub_key_path = save_keys(private_key, public_key, usb_path, public_key_path, key_name)
+    progress_label.config(text="Saving keys...")
+    progress_label.update_idletasks()
+
+    priv_key_path, pub_key_path, was_cleared = save_keys(private_key, public_key, usb_path, public_key_path, key_name)
     if priv_key_path is None or pub_key_path is None:
         messagebox.showerror("Error", "Key saving failed")
         return
-    
+
     progress_label.config(text="Keys saved!")
-    messagebox.showinfo("Success", f"Encrypted private key saved to:\n{priv_key_path}\n\nPublic key saved to:\n{pub_key_path}")
+    cleared_info = "\n\nPrevious keys on USB drive were removed." if was_cleared else ""
+    messagebox.showinfo("Success", f"Encrypted private key saved to:\n{priv_key_path}\n\nPublic key saved to:\n{pub_key_path}{cleared_info}")
+
     
 def handle_generate_button_click():
     def task():

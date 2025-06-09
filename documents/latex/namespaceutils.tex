@@ -1,0 +1,57 @@
+\doxysection{utils Namespace Reference}
+\hypertarget{namespaceutils}{}\label{namespaceutils}\index{utils@{utils}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceutils_a71c506da23850b77f64739f653f0f4a1}{browse\+\_\+public\+\_\+key\+\_\+file}} (entry)
+\item 
+\mbox{\hyperlink{namespaceutils_a486c9a37b6f295fc5204ac25e11b66fa}{browse\+\_\+pdf\+\_\+file}} (pdf\+\_\+path\+\_\+entry)
+\item 
+\mbox{\hyperlink{namespaceutils_aaf394788d2a9fa14c30bf219c837341d}{get\+\_\+usb\+\_\+devices}} ()
+\begin{DoxyCompactList}\small\item\em Detecting USB devices connected to the system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceutils_a91f355f1ecbaacf0d961469ea4d8654a}{find\+\_\+usb\+\_\+with\+\_\+key}} (usb\+\_\+devices)
+\item 
+\mbox{\hyperlink{namespaceutils_a711885353a514441248154b86ba115c3}{update\+\_\+usb\+\_\+devices}} (usb\+\_\+path\+\_\+entry)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceutils_a486c9a37b6f295fc5204ac25e11b66fa}\label{namespaceutils_a486c9a37b6f295fc5204ac25e11b66fa} 
+\index{utils@{utils}!browse\_pdf\_file@{browse\_pdf\_file}}
+\index{browse\_pdf\_file@{browse\_pdf\_file}!utils@{utils}}
+\doxysubsubsection{\texorpdfstring{browse\_pdf\_file()}{browse\_pdf\_file()}}
+{\footnotesize\ttfamily utils.\+browse\+\_\+pdf\+\_\+file (\begin{DoxyParamCaption}\item[{}]{pdf\+\_\+path\+\_\+entry }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceutils_a71c506da23850b77f64739f653f0f4a1}\label{namespaceutils_a71c506da23850b77f64739f653f0f4a1} 
+\index{utils@{utils}!browse\_public\_key\_file@{browse\_public\_key\_file}}
+\index{browse\_public\_key\_file@{browse\_public\_key\_file}!utils@{utils}}
+\doxysubsubsection{\texorpdfstring{browse\_public\_key\_file()}{browse\_public\_key\_file()}}
+{\footnotesize\ttfamily utils.\+browse\+\_\+public\+\_\+key\+\_\+file (\begin{DoxyParamCaption}\item[{}]{entry }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceutils_a91f355f1ecbaacf0d961469ea4d8654a}\label{namespaceutils_a91f355f1ecbaacf0d961469ea4d8654a} 
+\index{utils@{utils}!find\_usb\_with\_key@{find\_usb\_with\_key}}
+\index{find\_usb\_with\_key@{find\_usb\_with\_key}!utils@{utils}}
+\doxysubsubsection{\texorpdfstring{find\_usb\_with\_key()}{find\_usb\_with\_key()}}
+{\footnotesize\ttfamily utils.\+find\+\_\+usb\+\_\+with\+\_\+key (\begin{DoxyParamCaption}\item[{}]{usb\+\_\+devices }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceutils_aaf394788d2a9fa14c30bf219c837341d}\label{namespaceutils_aaf394788d2a9fa14c30bf219c837341d} 
+\index{utils@{utils}!get\_usb\_devices@{get\_usb\_devices}}
+\index{get\_usb\_devices@{get\_usb\_devices}!utils@{utils}}
+\doxysubsubsection{\texorpdfstring{get\_usb\_devices()}{get\_usb\_devices()}}
+{\footnotesize\ttfamily utils.\+get\+\_\+usb\+\_\+devices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Detecting USB devices connected to the system. 
+
+This function uses the psutil library to list all disk partitions and filters them to find removable devices (so basicly typical USB drivers).
+
+\begin{DoxyReturn}{Returns}
+A list of found and filtered USB device paths. 
+\end{DoxyReturn}
+\Hypertarget{namespaceutils_a711885353a514441248154b86ba115c3}\label{namespaceutils_a711885353a514441248154b86ba115c3} 
+\index{utils@{utils}!update\_usb\_devices@{update\_usb\_devices}}
+\index{update\_usb\_devices@{update\_usb\_devices}!utils@{utils}}
+\doxysubsubsection{\texorpdfstring{update\_usb\_devices()}{update\_usb\_devices()}}
+{\footnotesize\ttfamily utils.\+update\+\_\+usb\+\_\+devices (\begin{DoxyParamCaption}\item[{}]{usb\+\_\+path\+\_\+entry }\end{DoxyParamCaption})}
+

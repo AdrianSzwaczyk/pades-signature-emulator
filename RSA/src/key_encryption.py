@@ -3,6 +3,19 @@ from Crypto.Protocol.KDF import PBKDF2
 import os
 
 def encrypt_private_key(private_key, pin, progress_callback):
+    """! 
+    @brief Encrypts a private key using AES symetric encryption, where the encryption key is the user-provided PIN using PBKDF2 (Password-Based Key Derivation Function 2).
+
+    @details
+    The resulting encrypted output is composed of: 
+        salt (16 bytes) + nonce (16 bytes) + authentication tag (16 bytes) + ciphertext (N bytes).
+
+    @param private_key (bytes)  The private key to encrypt.
+    @param pin (str)  The password used to derive the encryption key.
+    @param progress_callback (Callable[[int, int], None])  A callback function to update the GUI progress bar.
+
+    @return  The encrypted private key as bytes, or None if an error occurs.
+    """
     try:
         salt = os.urandom(16)  # 128-bit salt (16 bytes)
         iterations = 600000

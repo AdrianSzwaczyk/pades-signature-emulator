@@ -2,6 +2,22 @@ import os
 import shutil
 
 def save_keys(private_key, public_key, usb_path, public_key_path, key_name):
+    """! 
+    @brief Function is responsible for saving the private key on the USB device and public key in specified by the user path.
+
+    @details Private key is saved in the "keys" catalog on the USB device. If the "keys" folder already exists, all the files inside it are delated
+    to ensure that the folder is empty before saving the new keys. The public key is saved in the specified path provided by the user. Function uses shutil library, 
+    which is part of default library to remove files and directories.
+
+    @param private_key (bytes)  The private key to save, generated from generate_rsa_keys().
+    @param public_key (bytes)  The public key to save, generated from generate_rsa_keys().
+    @param usb_path (str)  The path to the USB device where the private key will be saved, the device was chosen from the list by user.
+    @param public_key_path (str)  The path where the public key will be saved, specified by the user.
+    @param key_name (str)  The name to use for the saved keys.
+
+    @return Tuple ([str | None, str | None, bool]) containing the paths to the saved private and public keys, and a boolean indicating if the keys folder was cleared to 
+    show this information on the success text box. If an error occurs it returns (None, None, False).
+    """
     try:
         keys_folder = os.path.join(usb_path, "keys")
         folder_was_cleared = False

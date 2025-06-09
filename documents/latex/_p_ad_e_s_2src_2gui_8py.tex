@@ -1,0 +1,83 @@
+\doxysection{PAd\+ES/src/gui.py File Reference}
+\hypertarget{_p_ad_e_s_2src_2gui_8py}{}\label{_p_ad_e_s_2src_2gui_8py}\index{PAdES/src/gui.py@{PAdES/src/gui.py}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacegui}{gui}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacegui_a24e18360c24322fedffa95c6c60ded7f}{gui.\+update\+\_\+mode}} ()
+\item 
+\mbox{\hyperlink{namespacegui_a61e1972bdf9d818e7635865f14b03963}{gui.\+sign\+\_\+document}} ()
+\item 
+\mbox{\hyperlink{namespacegui_ad09fe9ba05d455007ba12821d1c2393d}{gui.\+handle\+\_\+sign\+\_\+button\+\_\+click}} ()
+\item 
+\mbox{\hyperlink{namespacegui_af9daf0f262d699e87c9332f4aa62bdf5}{gui.\+handle\+\_\+verify\+\_\+button\+\_\+click}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{gui.\+root}} = Tk()
+\item 
+\mbox{\hyperlink{namespacegui_ab0bd4d80cf774bb24ede440d69987113}{gui.\+mode\+\_\+var}} = String\+Var(\mbox{\hyperlink{namespacegui_af7500ffec2c2b96c309d0a33f5d29f23}{value}}="{}sign"{})
+\item 
+\mbox{\hyperlink{namespacegui_ab6411fff37be15465ad5a1d484f3ed6d}{gui.\+radio\+\_\+frame}} = ttk.\+Frame(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}})
+\item 
+\mbox{\hyperlink{namespacegui_a783954bf6031f175ef0ddae4ac1dd3dc}{gui.\+row}}
+\item 
+\mbox{\hyperlink{namespacegui_a779aeda230f988f7df07814a8e4084b8}{gui.\+column}}
+\item 
+\mbox{\hyperlink{namespacegui_ab4411318455691e68be7c6ed65d2b029}{gui.\+columnspan}}
+\item 
+\mbox{\hyperlink{namespacegui_a80bb8ee8b7bfc290da8d825c03077250}{gui.\+padx}}
+\item 
+\mbox{\hyperlink{namespacegui_a36428e45f1c293627cfdde8e3faca91e}{gui.\+pady}}
+\item 
+\mbox{\hyperlink{namespacegui_a2a35d31c47ba91f4f95a27689f2d3057}{gui.\+sticky}}
+\item 
+\mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{gui.\+text}}
+\item 
+\mbox{\hyperlink{namespacegui_ab7e8df3b79d90e9edce4b224438ebe0e}{gui.\+variable}}
+\item 
+\mbox{\hyperlink{namespacegui_af7500ffec2c2b96c309d0a33f5d29f23}{gui.\+value}}
+\item 
+\mbox{\hyperlink{namespacegui_a549921291b6e56f3405d2bc899ef755e}{gui.\+command}}
+\item 
+\mbox{\hyperlink{namespacegui_aebb3b7c5b9e4a26b516baa82ffe44a8a}{gui.\+side}}
+\item 
+\mbox{\hyperlink{namespacegui_ae11229c2b6abdf1f67a7773ae2d8140f}{gui.\+anchor}}
+\item 
+\mbox{\hyperlink{namespacegui_aea647d2ac1d0a31163b012b2de221ab5}{gui.\+pdf\+\_\+path\+\_\+entry}} = Entry(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}})
+\item 
+\mbox{\hyperlink{namespacegui_a8e377b46abd2b5aa65a11d055c73a185}{gui.\+browse\+\_\+button}} = Button(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Browse"{}, \mbox{\hyperlink{namespacegui_a549921291b6e56f3405d2bc899ef755e}{command}}=lambda\+: browse\+\_\+pdf\+\_\+file(\mbox{\hyperlink{namespacegui_aea647d2ac1d0a31163b012b2de221ab5}{pdf\+\_\+path\+\_\+entry}}))
+\item 
+\mbox{\hyperlink{namespacegui_aae3b7d415147d957f5071d0f66f06ef8}{gui.\+public\+\_\+key\+\_\+label}} = Label(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Select public key\+:"{})
+\item 
+\mbox{\hyperlink{namespacegui_af30de1e17fdc60baa7aa63b328621929}{gui.\+public\+\_\+key\+\_\+entry}} = Entry(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}})
+\item 
+\mbox{\hyperlink{namespacegui_a3333dcaf41d09d52553d7d0269961fbf}{gui.\+public\+\_\+key\+\_\+browse}} = Button(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Browse"{}, \mbox{\hyperlink{namespacegui_a549921291b6e56f3405d2bc899ef755e}{command}}=lambda\+: browse\+\_\+public\+\_\+key\+\_\+file(\mbox{\hyperlink{namespacegui_af30de1e17fdc60baa7aa63b328621929}{public\+\_\+key\+\_\+entry}}))
+\item 
+\mbox{\hyperlink{namespacegui_a12bee1595059e453c568ef84373d3711}{gui.\+pin\+\_\+label}} = Label(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Enter your private key PIN\+:"{})
+\item 
+\mbox{\hyperlink{namespacegui_a2a311c89bbef55410f5bd192f4969748}{gui.\+pin\+\_\+entry}} = Entry(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, show="{}\texorpdfstring{$\ast$}{*}"{})
+\item 
+\mbox{\hyperlink{namespacegui_a0dd1c4c801934b2a34189747db3dc9b2}{gui.\+usb\+\_\+label}} = Label(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Select USB device\+:"{})
+\item 
+\mbox{\hyperlink{namespacegui_a995d281f09276101f2c05a3a55cc9be3}{gui.\+usb\+\_\+path\+\_\+entry}} = ttk.\+Combobox(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, state="{}readonly"{})
+\item 
+\mbox{\hyperlink{namespacegui_a65051a99ae29968adff86de0ec16e342}{gui.\+weight}}
+\item 
+\mbox{\hyperlink{namespacegui_af46c56e7bfae56d58368394b046406f8}{gui.\+progress\+\_\+var}} = Int\+Var()
+\item 
+\mbox{\hyperlink{namespacegui_aba9bdc4b603eacba2e41dff064fe3206}{gui.\+progress\+\_\+label}} = Label(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Processing..."{})
+\item 
+\mbox{\hyperlink{namespacegui_a0d2a9f3f610908f0184c0a22588b5531}{gui.\+progress\+\_\+bar}} = Progressbar(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_ab7e8df3b79d90e9edce4b224438ebe0e}{variable}}=\mbox{\hyperlink{namespacegui_af46c56e7bfae56d58368394b046406f8}{progress\+\_\+var}}, maximum=600000)
+\item 
+\mbox{\hyperlink{namespacegui_a9e2a14869bd6a940a8cafc114cef7f50}{gui.\+refresh\+\_\+button}} = Button(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Refresh USB Devices"{}, \mbox{\hyperlink{namespacegui_a549921291b6e56f3405d2bc899ef755e}{command}}=lambda\+: update\+\_\+usb\+\_\+devices(\mbox{\hyperlink{namespacegui_a995d281f09276101f2c05a3a55cc9be3}{usb\+\_\+path\+\_\+entry}}))
+\item 
+\mbox{\hyperlink{namespacegui_a50c9c322604fa28bbf2d670fdbdb68c7}{gui.\+sign\+\_\+button}} = Button(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Sign PDF"{}, \mbox{\hyperlink{namespacegui_a549921291b6e56f3405d2bc899ef755e}{command}}=\mbox{\hyperlink{namespacegui_ad09fe9ba05d455007ba12821d1c2393d}{handle\+\_\+sign\+\_\+button\+\_\+click}})
+\item 
+\mbox{\hyperlink{namespacegui_ad00cdd7b5aac01c26b518c55277fefab}{gui.\+verify\+\_\+button}} = Button(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Verify Signature"{}, \mbox{\hyperlink{namespacegui_a549921291b6e56f3405d2bc899ef755e}{command}}=\mbox{\hyperlink{namespacegui_af9daf0f262d699e87c9332f4aa62bdf5}{handle\+\_\+verify\+\_\+button\+\_\+click}})
+\end{DoxyCompactItemize}

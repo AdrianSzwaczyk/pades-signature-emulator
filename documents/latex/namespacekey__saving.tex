@@ -1,0 +1,38 @@
+\doxysection{key\+\_\+saving Namespace Reference}
+\hypertarget{namespacekey__saving}{}\label{namespacekey__saving}\index{key\_saving@{key\_saving}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacekey__saving_af528c23f394abadd10446e40f9f2af91}{save\+\_\+keys}} (private\+\_\+key, public\+\_\+key, usb\+\_\+path, public\+\_\+key\+\_\+path, key\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Function is responsible for saving the private key on the USB device and public key in specified by the user path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacekey__saving_af528c23f394abadd10446e40f9f2af91}\label{namespacekey__saving_af528c23f394abadd10446e40f9f2af91} 
+\index{key\_saving@{key\_saving}!save\_keys@{save\_keys}}
+\index{save\_keys@{save\_keys}!key\_saving@{key\_saving}}
+\doxysubsubsection{\texorpdfstring{save\_keys()}{save\_keys()}}
+{\footnotesize\ttfamily key\+\_\+saving.\+save\+\_\+keys (\begin{DoxyParamCaption}\item[{}]{private\+\_\+key,  }\item[{}]{public\+\_\+key,  }\item[{}]{usb\+\_\+path,  }\item[{}]{public\+\_\+key\+\_\+path,  }\item[{}]{key\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Function is responsible for saving the private key on the USB device and public key in specified by the user path. 
+
+Private key is saved in the "{}keys"{} catalog on the USB device. If the "{}keys"{} folder already exists, all the files inside it are delated to ensure that the folder is empty before saving the new keys. The public key is saved in the specified path provided by the user. Function uses shutil library, which is part of default library to remove files and directories.
+
+
+\begin{DoxyParams}{Parameters}
+{\em private\+\_\+key} & The private key to save (bytes), generated from generate\+\_\+rsa\+\_\+keys(). \\
+\hline
+{\em public\+\_\+key} & The public key to save (bytes), generated from generate\+\_\+rsa\+\_\+keys(). \\
+\hline
+{\em usb\+\_\+path} & The path to the USB device where the private key will be saved, the device was chosen from the list by user. \\
+\hline
+{\em public\+\_\+key\+\_\+path} & The path where the public key will be saved, specified by the user. \\
+\hline
+{\em key\+\_\+name} & The name to use for the saved keys.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple containing the paths to the saved private and public keys, and a boolean indicating if the keys folder was cleared to show this information on the success text box. If an error occurs it returns (None, None, False). 
+\end{DoxyReturn}

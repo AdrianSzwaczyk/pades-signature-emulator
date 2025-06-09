@@ -80,6 +80,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a71c925802f3100e6a4e301e8cbafc38d" id="r_a71c925802f3100e6a4e301e8cbafc38d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71c925802f3100e6a4e301e8cbafc38d">verify_pdf_signature</a> (pdf_path, public_key_path)</td></tr>
+<tr class="memdesc:a71c925802f3100e6a4e301e8cbafc38d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify the signature of a PDF file using a public key.  <br /></td></tr>
 <tr class="separator:a71c925802f3100e6a4e301e8cbafc38d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -101,6 +102,20 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Verify the signature of a PDF file using a public key. </p>
+<p>This function opens and reads the PDF file with use of pypdf library, extracts metadata and checks if signature exists. If there is no data it returns False and proper error message. If the signature exists, it constructs PDF content as a text to compute the SHA256 digest and compares it with the stored digest. If those digests match, it means that the PDF has not been changed after signing with the private key. Lastly, it reads the signature as bytes from earlier retrieved metadata, imports public key from the given path, and verifies the signature using the SHA256 digest and the public key. The function uses the following libraries:</p><ul>
+<li>'pypdf' for PDF parsing</li>
+<li>Crypto.PublicKey.RSA, Crypto.Signature.pkcs1_15, Crypto.Hash.SHA256 from the 'pycryptodome' package for cryptographic operations.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pdf_path</td><td>(str) The path to the PDF file to verify. </td></tr>
+    <tr><td class="paramname">public_key_path</td><td>(str) The path to the public key file in .PEM format.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>tuple[bool, str] Where the first element is a boolean indicating whether the signature is valid or invalid. Second part is a string with a message specifying the result of the verification process. </dd></dl>
 
 </div>
 </div>

@@ -4,13 +4,15 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{namespacegui_a24e18360c24322fedffa95c6c60ded7f}{update\+\_\+mode}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Switch between \textquotesingle{}sign\textquotesingle{} and \textquotesingle{}verify\textquotesingle{} modes in the GUI. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespacegui_a61e1972bdf9d818e7635865f14b03963}{sign\+\_\+document}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Handles the process of signing a selected PDF file. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespacegui_ad09fe9ba05d455007ba12821d1c2393d}{handle\+\_\+sign\+\_\+button\+\_\+click}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Function handles the sign button click event in the GUI. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespacegui_af9daf0f262d699e87c9332f4aa62bdf5}{handle\+\_\+verify\+\_\+button\+\_\+click}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Function handles the verify button click event in the GUI. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacegui_a834b7b29969b504ff6076027afdde911}{main\+\_\+pades}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the GUI for the PADES application. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespacegui_a684035856c069ddc2349423fbda968ed}{update\+\_\+usb\+\_\+devices}} ()
 \begin{DoxyCompactList}\small\item\em Allows to update the list of USB devices currently connected to the computer. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespacegui_a58bb657dde58384e4f8190316a93913e}{browse\+\_\+public\+\_\+key\+\_\+path}} ()
@@ -19,73 +21,8 @@
 \begin{DoxyCompactList}\small\item\em Main logic for GUI, data validation, key generation, encryption and keys saving. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespacegui_a88fac34a7747b92ee235e3dd3f1ff99f}{handle\+\_\+generate\+\_\+button\+\_\+click}} ()
 \begin{DoxyCompactList}\small\item\em Function handles the generate button click event in the GUI. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacegui_a9d06e0761c67bdea9d9a431d584b3447}{main}} ()
+\mbox{\hyperlink{namespacegui_a677e34a6b3df7efe1b1315a0532353f0}{main\+\_\+rsa}} ()
 \begin{DoxyCompactList}\small\item\em Initializes the GUI for the RSA key generation application. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}} = Tk()
-\item 
-\mbox{\hyperlink{namespacegui_ab0bd4d80cf774bb24ede440d69987113}{mode\+\_\+var}} = String\+Var(\mbox{\hyperlink{namespacegui_af7500ffec2c2b96c309d0a33f5d29f23}{value}}="{}sign"{})
-\item 
-\mbox{\hyperlink{namespacegui_ab6411fff37be15465ad5a1d484f3ed6d}{radio\+\_\+frame}} = ttk.\+Frame(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}})
-\item 
-\mbox{\hyperlink{namespacegui_a783954bf6031f175ef0ddae4ac1dd3dc}{row}}
-\item 
-\mbox{\hyperlink{namespacegui_a779aeda230f988f7df07814a8e4084b8}{column}}
-\item 
-\mbox{\hyperlink{namespacegui_ab4411318455691e68be7c6ed65d2b029}{columnspan}}
-\item 
-\mbox{\hyperlink{namespacegui_a80bb8ee8b7bfc290da8d825c03077250}{padx}}
-\item 
-\mbox{\hyperlink{namespacegui_a36428e45f1c293627cfdde8e3faca91e}{pady}}
-\item 
-\mbox{\hyperlink{namespacegui_a2a35d31c47ba91f4f95a27689f2d3057}{sticky}}
-\item 
-\mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}
-\item 
-\mbox{\hyperlink{namespacegui_ab7e8df3b79d90e9edce4b224438ebe0e}{variable}}
-\item 
-\mbox{\hyperlink{namespacegui_af7500ffec2c2b96c309d0a33f5d29f23}{value}}
-\item 
-\mbox{\hyperlink{namespacegui_a549921291b6e56f3405d2bc899ef755e}{command}}
-\item 
-\mbox{\hyperlink{namespacegui_aebb3b7c5b9e4a26b516baa82ffe44a8a}{side}}
-\item 
-\mbox{\hyperlink{namespacegui_ae11229c2b6abdf1f67a7773ae2d8140f}{anchor}}
-\item 
-\mbox{\hyperlink{namespacegui_aea647d2ac1d0a31163b012b2de221ab5}{pdf\+\_\+path\+\_\+entry}} = Entry(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}})
-\item 
-\mbox{\hyperlink{namespacegui_a8e377b46abd2b5aa65a11d055c73a185}{browse\+\_\+button}} = Button(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Browse"{}, \mbox{\hyperlink{namespacegui_a549921291b6e56f3405d2bc899ef755e}{command}}=lambda\+: browse\+\_\+pdf\+\_\+file(\mbox{\hyperlink{namespacegui_aea647d2ac1d0a31163b012b2de221ab5}{pdf\+\_\+path\+\_\+entry}}))
-\item 
-\mbox{\hyperlink{namespacegui_aae3b7d415147d957f5071d0f66f06ef8}{public\+\_\+key\+\_\+label}} = Label(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Select public key\+:"{})
-\item 
-\mbox{\hyperlink{namespacegui_af30de1e17fdc60baa7aa63b328621929}{public\+\_\+key\+\_\+entry}} = Entry(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}})
-\item 
-\mbox{\hyperlink{namespacegui_a3333dcaf41d09d52553d7d0269961fbf}{public\+\_\+key\+\_\+browse}} = Button(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Browse"{}, \mbox{\hyperlink{namespacegui_a549921291b6e56f3405d2bc899ef755e}{command}}=lambda\+: browse\+\_\+public\+\_\+key\+\_\+file(\mbox{\hyperlink{namespacegui_af30de1e17fdc60baa7aa63b328621929}{public\+\_\+key\+\_\+entry}}))
-\item 
-\mbox{\hyperlink{namespacegui_a12bee1595059e453c568ef84373d3711}{pin\+\_\+label}} = Label(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Enter your private key PIN\+:"{})
-\item 
-\mbox{\hyperlink{namespacegui_a2a311c89bbef55410f5bd192f4969748}{pin\+\_\+entry}} = Entry(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, show="{}\texorpdfstring{$\ast$}{*}"{})
-\item 
-\mbox{\hyperlink{namespacegui_a0dd1c4c801934b2a34189747db3dc9b2}{usb\+\_\+label}} = Label(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Select USB device\+:"{})
-\item 
-\mbox{\hyperlink{namespacegui_a995d281f09276101f2c05a3a55cc9be3}{usb\+\_\+path\+\_\+entry}} = ttk.\+Combobox(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, state="{}readonly"{})
-\item 
-\mbox{\hyperlink{namespacegui_a65051a99ae29968adff86de0ec16e342}{weight}}
-\item 
-\mbox{\hyperlink{namespacegui_af46c56e7bfae56d58368394b046406f8}{progress\+\_\+var}} = Int\+Var()
-\item 
-\mbox{\hyperlink{namespacegui_aba9bdc4b603eacba2e41dff064fe3206}{progress\+\_\+label}} = Label(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Processing..."{})
-\item 
-\mbox{\hyperlink{namespacegui_a0d2a9f3f610908f0184c0a22588b5531}{progress\+\_\+bar}} = Progressbar(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_ab7e8df3b79d90e9edce4b224438ebe0e}{variable}}=\mbox{\hyperlink{namespacegui_af46c56e7bfae56d58368394b046406f8}{progress\+\_\+var}}, maximum=600000)
-\item 
-\mbox{\hyperlink{namespacegui_a9e2a14869bd6a940a8cafc114cef7f50}{refresh\+\_\+button}} = Button(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Refresh USB Devices"{}, \mbox{\hyperlink{namespacegui_a549921291b6e56f3405d2bc899ef755e}{command}}=lambda\+: update\+\_\+usb\+\_\+devices(\mbox{\hyperlink{namespacegui_a995d281f09276101f2c05a3a55cc9be3}{usb\+\_\+path\+\_\+entry}}))
-\item 
-\mbox{\hyperlink{namespacegui_a50c9c322604fa28bbf2d670fdbdb68c7}{sign\+\_\+button}} = Button(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Sign PDF"{}, \mbox{\hyperlink{namespacegui_a549921291b6e56f3405d2bc899ef755e}{command}}=\mbox{\hyperlink{namespacegui_ad09fe9ba05d455007ba12821d1c2393d}{handle\+\_\+sign\+\_\+button\+\_\+click}})
-\item 
-\mbox{\hyperlink{namespacegui_ad00cdd7b5aac01c26b518c55277fefab}{verify\+\_\+button}} = Button(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Verify Signature"{}, \mbox{\hyperlink{namespacegui_a549921291b6e56f3405d2bc899ef755e}{command}}=\mbox{\hyperlink{namespacegui_af9daf0f262d699e87c9332f4aa62bdf5}{handle\+\_\+verify\+\_\+button\+\_\+click}})
-\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -137,17 +74,38 @@ Disables GUI inputs, shows a progress bar and loading indicator, and launches th
 \doxysubsubsection{\texorpdfstring{handle\_sign\_button\_click()}{handle\_sign\_button\_click()}}
 {\footnotesize\ttfamily gui.\+handle\+\_\+sign\+\_\+button\+\_\+click (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\Hypertarget{namespacegui_af9daf0f262d699e87c9332f4aa62bdf5}\label{namespacegui_af9daf0f262d699e87c9332f4aa62bdf5} 
+
+
+Function handles the sign button click event in the GUI. 
+
+Disables GUI inputs, shows a progress bar and loading indicator, and launches the signing process in a new thread. When the process is complete, it restores the GUI to its original state, enabling inputs and hiding the progress bar. \doxylink{namespacegui_a61e1972bdf9d818e7635865f14b03963}{sign\+\_\+document()} function is called to perform the signing operation. \Hypertarget{namespacegui_af9daf0f262d699e87c9332f4aa62bdf5}\label{namespacegui_af9daf0f262d699e87c9332f4aa62bdf5} 
 \index{gui@{gui}!handle\_verify\_button\_click@{handle\_verify\_button\_click}}
 \index{handle\_verify\_button\_click@{handle\_verify\_button\_click}!gui@{gui}}
 \doxysubsubsection{\texorpdfstring{handle\_verify\_button\_click()}{handle\_verify\_button\_click()}}
 {\footnotesize\ttfamily gui.\+handle\+\_\+verify\+\_\+button\+\_\+click (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\Hypertarget{namespacegui_a9d06e0761c67bdea9d9a431d584b3447}\label{namespacegui_a9d06e0761c67bdea9d9a431d584b3447} 
-\index{gui@{gui}!main@{main}}
-\index{main@{main}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{main()}{main()}}
-{\footnotesize\ttfamily gui.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+Function handles the verify button click event in the GUI. 
+
+Retrieves the PDF file path and public key path from the GUI. If both are valid, it verifies the PDF\textquotesingle{}s signature using the public key. ~\newline
+ Displays a success or error message based on the verification result. verify\+\_\+pdf\+\_\+signature() function is used to perform the verification operation. \Hypertarget{namespacegui_a834b7b29969b504ff6076027afdde911}\label{namespacegui_a834b7b29969b504ff6076027afdde911} 
+\index{gui@{gui}!main\_pades@{main\_pades}}
+\index{main\_pades@{main\_pades}!gui@{gui}}
+\doxysubsubsection{\texorpdfstring{main\_pades()}{main\_pades()}}
+{\footnotesize\ttfamily gui.\+main\+\_\+pades (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the GUI for the PADES application. 
+
+Creates all necessary components and starts the Tkinter main loop.
+
+This function sets up the main window, adds labels, entry fields, buttons, and a progress bar. All the components are arranged and configured to allow the user to enter a PIN for their private key, select a USB drive, choose a PDF file to sign or verify, and specify a public key for verification. \Hypertarget{namespacegui_a677e34a6b3df7efe1b1315a0532353f0}\label{namespacegui_a677e34a6b3df7efe1b1315a0532353f0} 
+\index{gui@{gui}!main\_rsa@{main\_rsa}}
+\index{main\_rsa@{main\_rsa}!gui@{gui}}
+\doxysubsubsection{\texorpdfstring{main\_rsa()}{main\_rsa()}}
+{\footnotesize\ttfamily gui.\+main\+\_\+rsa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -161,13 +119,21 @@ This function sets up the main window, adds labels, entry fields, buttons, and a
 \doxysubsubsection{\texorpdfstring{sign\_document()}{sign\_document()}}
 {\footnotesize\ttfamily gui.\+sign\+\_\+document (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\Hypertarget{namespacegui_a24e18360c24322fedffa95c6c60ded7f}\label{namespacegui_a24e18360c24322fedffa95c6c60ded7f} 
+
+
+Handles the process of signing a selected PDF file. 
+
+This function retrieves the PIN, PDF file path, and USB device path from the GUI entries. It validates the paths, decrypts the private key using the provided PIN, and then signs the PDF file with that key. If any step fails, it shows an error with proper message. If the signing is successful, it updates the GUI to inform the user. decrypt\+\_\+private\+\_\+key() function is used to decrypt the private key, and sign\+\_\+pdf() function is used to sign the PDF file. \Hypertarget{namespacegui_a24e18360c24322fedffa95c6c60ded7f}\label{namespacegui_a24e18360c24322fedffa95c6c60ded7f} 
 \index{gui@{gui}!update\_mode@{update\_mode}}
 \index{update\_mode@{update\_mode}!gui@{gui}}
 \doxysubsubsection{\texorpdfstring{update\_mode()}{update\_mode()}}
 {\footnotesize\ttfamily gui.\+update\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\Hypertarget{namespacegui_a684035856c069ddc2349423fbda968ed}\label{namespacegui_a684035856c069ddc2349423fbda968ed} 
+
+
+Switch between \textquotesingle{}sign\textquotesingle{} and \textquotesingle{}verify\textquotesingle{} modes in the GUI. 
+
+Only important elements are displayed in each mode. \Hypertarget{namespacegui_a684035856c069ddc2349423fbda968ed}\label{namespacegui_a684035856c069ddc2349423fbda968ed} 
 \index{gui@{gui}!update\_usb\_devices@{update\_usb\_devices}}
 \index{update\_usb\_devices@{update\_usb\_devices}!gui@{gui}}
 \doxysubsubsection{\texorpdfstring{update\_usb\_devices()}{update\_usb\_devices()}}
@@ -177,192 +143,4 @@ This function sets up the main window, adds labels, entry fields, buttons, and a
 
 Allows to update the list of USB devices currently connected to the computer. 
 
-It makes sure that if there is at least one USB device connected, it will be selected by default in the GUI and if there are no USB devices connecter, the box will be empty. 
-
-\doxysubsection{Variable Documentation}
-\Hypertarget{namespacegui_ae11229c2b6abdf1f67a7773ae2d8140f}\label{namespacegui_ae11229c2b6abdf1f67a7773ae2d8140f} 
-\index{gui@{gui}!anchor@{anchor}}
-\index{anchor@{anchor}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{anchor}{anchor}}
-{\footnotesize\ttfamily gui.\+anchor}
-
-\Hypertarget{namespacegui_a8e377b46abd2b5aa65a11d055c73a185}\label{namespacegui_a8e377b46abd2b5aa65a11d055c73a185} 
-\index{gui@{gui}!browse\_button@{browse\_button}}
-\index{browse\_button@{browse\_button}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{browse\_button}{browse\_button}}
-{\footnotesize\ttfamily gui.\+browse\+\_\+button = Button(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Browse"{}, \mbox{\hyperlink{namespacegui_a549921291b6e56f3405d2bc899ef755e}{command}}=lambda\+: browse\+\_\+pdf\+\_\+file(\mbox{\hyperlink{namespacegui_aea647d2ac1d0a31163b012b2de221ab5}{pdf\+\_\+path\+\_\+entry}}))}
-
-\Hypertarget{namespacegui_a779aeda230f988f7df07814a8e4084b8}\label{namespacegui_a779aeda230f988f7df07814a8e4084b8} 
-\index{gui@{gui}!column@{column}}
-\index{column@{column}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{column}{column}}
-{\footnotesize\ttfamily gui.\+column}
-
-\Hypertarget{namespacegui_ab4411318455691e68be7c6ed65d2b029}\label{namespacegui_ab4411318455691e68be7c6ed65d2b029} 
-\index{gui@{gui}!columnspan@{columnspan}}
-\index{columnspan@{columnspan}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{columnspan}{columnspan}}
-{\footnotesize\ttfamily gui.\+columnspan}
-
-\Hypertarget{namespacegui_a549921291b6e56f3405d2bc899ef755e}\label{namespacegui_a549921291b6e56f3405d2bc899ef755e} 
-\index{gui@{gui}!command@{command}}
-\index{command@{command}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{command}{command}}
-{\footnotesize\ttfamily gui.\+command}
-
-\Hypertarget{namespacegui_ab0bd4d80cf774bb24ede440d69987113}\label{namespacegui_ab0bd4d80cf774bb24ede440d69987113} 
-\index{gui@{gui}!mode\_var@{mode\_var}}
-\index{mode\_var@{mode\_var}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{mode\_var}{mode\_var}}
-{\footnotesize\ttfamily gui.\+mode\+\_\+var = String\+Var(\mbox{\hyperlink{namespacegui_af7500ffec2c2b96c309d0a33f5d29f23}{value}}="{}sign"{})}
-
-\Hypertarget{namespacegui_a80bb8ee8b7bfc290da8d825c03077250}\label{namespacegui_a80bb8ee8b7bfc290da8d825c03077250} 
-\index{gui@{gui}!padx@{padx}}
-\index{padx@{padx}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{padx}{padx}}
-{\footnotesize\ttfamily gui.\+padx}
-
-\Hypertarget{namespacegui_a36428e45f1c293627cfdde8e3faca91e}\label{namespacegui_a36428e45f1c293627cfdde8e3faca91e} 
-\index{gui@{gui}!pady@{pady}}
-\index{pady@{pady}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{pady}{pady}}
-{\footnotesize\ttfamily gui.\+pady}
-
-\Hypertarget{namespacegui_aea647d2ac1d0a31163b012b2de221ab5}\label{namespacegui_aea647d2ac1d0a31163b012b2de221ab5} 
-\index{gui@{gui}!pdf\_path\_entry@{pdf\_path\_entry}}
-\index{pdf\_path\_entry@{pdf\_path\_entry}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{pdf\_path\_entry}{pdf\_path\_entry}}
-{\footnotesize\ttfamily gui.\+pdf\+\_\+path\+\_\+entry = Entry(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}})}
-
-\Hypertarget{namespacegui_a2a311c89bbef55410f5bd192f4969748}\label{namespacegui_a2a311c89bbef55410f5bd192f4969748} 
-\index{gui@{gui}!pin\_entry@{pin\_entry}}
-\index{pin\_entry@{pin\_entry}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{pin\_entry}{pin\_entry}}
-{\footnotesize\ttfamily gui.\+pin\+\_\+entry = Entry(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, show="{}\texorpdfstring{$\ast$}{*}"{})}
-
-\Hypertarget{namespacegui_a12bee1595059e453c568ef84373d3711}\label{namespacegui_a12bee1595059e453c568ef84373d3711} 
-\index{gui@{gui}!pin\_label@{pin\_label}}
-\index{pin\_label@{pin\_label}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{pin\_label}{pin\_label}}
-{\footnotesize\ttfamily gui.\+pin\+\_\+label = Label(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Enter your private key PIN\+:"{})}
-
-\Hypertarget{namespacegui_a0d2a9f3f610908f0184c0a22588b5531}\label{namespacegui_a0d2a9f3f610908f0184c0a22588b5531} 
-\index{gui@{gui}!progress\_bar@{progress\_bar}}
-\index{progress\_bar@{progress\_bar}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{progress\_bar}{progress\_bar}}
-{\footnotesize\ttfamily gui.\+progress\+\_\+bar = Progressbar(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_ab7e8df3b79d90e9edce4b224438ebe0e}{variable}}=\mbox{\hyperlink{namespacegui_af46c56e7bfae56d58368394b046406f8}{progress\+\_\+var}}, maximum=600000)}
-
-\Hypertarget{namespacegui_aba9bdc4b603eacba2e41dff064fe3206}\label{namespacegui_aba9bdc4b603eacba2e41dff064fe3206} 
-\index{gui@{gui}!progress\_label@{progress\_label}}
-\index{progress\_label@{progress\_label}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{progress\_label}{progress\_label}}
-{\footnotesize\ttfamily gui.\+progress\+\_\+label = Label(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Processing..."{})}
-
-\Hypertarget{namespacegui_af46c56e7bfae56d58368394b046406f8}\label{namespacegui_af46c56e7bfae56d58368394b046406f8} 
-\index{gui@{gui}!progress\_var@{progress\_var}}
-\index{progress\_var@{progress\_var}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{progress\_var}{progress\_var}}
-{\footnotesize\ttfamily gui.\+progress\+\_\+var = Int\+Var()}
-
-\Hypertarget{namespacegui_a3333dcaf41d09d52553d7d0269961fbf}\label{namespacegui_a3333dcaf41d09d52553d7d0269961fbf} 
-\index{gui@{gui}!public\_key\_browse@{public\_key\_browse}}
-\index{public\_key\_browse@{public\_key\_browse}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{public\_key\_browse}{public\_key\_browse}}
-{\footnotesize\ttfamily gui.\+public\+\_\+key\+\_\+browse = Button(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Browse"{}, \mbox{\hyperlink{namespacegui_a549921291b6e56f3405d2bc899ef755e}{command}}=lambda\+: browse\+\_\+public\+\_\+key\+\_\+file(\mbox{\hyperlink{namespacegui_af30de1e17fdc60baa7aa63b328621929}{public\+\_\+key\+\_\+entry}}))}
-
-\Hypertarget{namespacegui_af30de1e17fdc60baa7aa63b328621929}\label{namespacegui_af30de1e17fdc60baa7aa63b328621929} 
-\index{gui@{gui}!public\_key\_entry@{public\_key\_entry}}
-\index{public\_key\_entry@{public\_key\_entry}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{public\_key\_entry}{public\_key\_entry}}
-{\footnotesize\ttfamily gui.\+public\+\_\+key\+\_\+entry = Entry(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}})}
-
-\Hypertarget{namespacegui_aae3b7d415147d957f5071d0f66f06ef8}\label{namespacegui_aae3b7d415147d957f5071d0f66f06ef8} 
-\index{gui@{gui}!public\_key\_label@{public\_key\_label}}
-\index{public\_key\_label@{public\_key\_label}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{public\_key\_label}{public\_key\_label}}
-{\footnotesize\ttfamily gui.\+public\+\_\+key\+\_\+label = Label(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Select public key\+:"{})}
-
-\Hypertarget{namespacegui_ab6411fff37be15465ad5a1d484f3ed6d}\label{namespacegui_ab6411fff37be15465ad5a1d484f3ed6d} 
-\index{gui@{gui}!radio\_frame@{radio\_frame}}
-\index{radio\_frame@{radio\_frame}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{radio\_frame}{radio\_frame}}
-{\footnotesize\ttfamily gui.\+radio\+\_\+frame = ttk.\+Frame(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}})}
-
-\Hypertarget{namespacegui_a9e2a14869bd6a940a8cafc114cef7f50}\label{namespacegui_a9e2a14869bd6a940a8cafc114cef7f50} 
-\index{gui@{gui}!refresh\_button@{refresh\_button}}
-\index{refresh\_button@{refresh\_button}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{refresh\_button}{refresh\_button}}
-{\footnotesize\ttfamily gui.\+refresh\+\_\+button = Button(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Refresh USB Devices"{}, \mbox{\hyperlink{namespacegui_a549921291b6e56f3405d2bc899ef755e}{command}}=lambda\+: update\+\_\+usb\+\_\+devices(\mbox{\hyperlink{namespacegui_a995d281f09276101f2c05a3a55cc9be3}{usb\+\_\+path\+\_\+entry}}))}
-
-\Hypertarget{namespacegui_a82aea24dec4e3d438a7b92b096db9523}\label{namespacegui_a82aea24dec4e3d438a7b92b096db9523} 
-\index{gui@{gui}!root@{root}}
-\index{root@{root}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{root}{root}}
-{\footnotesize\ttfamily gui.\+root = Tk()}
-
-\Hypertarget{namespacegui_a783954bf6031f175ef0ddae4ac1dd3dc}\label{namespacegui_a783954bf6031f175ef0ddae4ac1dd3dc} 
-\index{gui@{gui}!row@{row}}
-\index{row@{row}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{row}{row}}
-{\footnotesize\ttfamily gui.\+row}
-
-\Hypertarget{namespacegui_aebb3b7c5b9e4a26b516baa82ffe44a8a}\label{namespacegui_aebb3b7c5b9e4a26b516baa82ffe44a8a} 
-\index{gui@{gui}!side@{side}}
-\index{side@{side}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{side}{side}}
-{\footnotesize\ttfamily gui.\+side}
-
-\Hypertarget{namespacegui_a50c9c322604fa28bbf2d670fdbdb68c7}\label{namespacegui_a50c9c322604fa28bbf2d670fdbdb68c7} 
-\index{gui@{gui}!sign\_button@{sign\_button}}
-\index{sign\_button@{sign\_button}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{sign\_button}{sign\_button}}
-{\footnotesize\ttfamily gui.\+sign\+\_\+button = Button(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Sign PDF"{}, \mbox{\hyperlink{namespacegui_a549921291b6e56f3405d2bc899ef755e}{command}}=\mbox{\hyperlink{namespacegui_ad09fe9ba05d455007ba12821d1c2393d}{handle\+\_\+sign\+\_\+button\+\_\+click}})}
-
-\Hypertarget{namespacegui_a2a35d31c47ba91f4f95a27689f2d3057}\label{namespacegui_a2a35d31c47ba91f4f95a27689f2d3057} 
-\index{gui@{gui}!sticky@{sticky}}
-\index{sticky@{sticky}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{sticky}{sticky}}
-{\footnotesize\ttfamily gui.\+sticky}
-
-\Hypertarget{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}\label{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e} 
-\index{gui@{gui}!text@{text}}
-\index{text@{text}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{text}{text}}
-{\footnotesize\ttfamily gui.\+text}
-
-\Hypertarget{namespacegui_a0dd1c4c801934b2a34189747db3dc9b2}\label{namespacegui_a0dd1c4c801934b2a34189747db3dc9b2} 
-\index{gui@{gui}!usb\_label@{usb\_label}}
-\index{usb\_label@{usb\_label}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{usb\_label}{usb\_label}}
-{\footnotesize\ttfamily gui.\+usb\+\_\+label = Label(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Select USB device\+:"{})}
-
-\Hypertarget{namespacegui_a995d281f09276101f2c05a3a55cc9be3}\label{namespacegui_a995d281f09276101f2c05a3a55cc9be3} 
-\index{gui@{gui}!usb\_path\_entry@{usb\_path\_entry}}
-\index{usb\_path\_entry@{usb\_path\_entry}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{usb\_path\_entry}{usb\_path\_entry}}
-{\footnotesize\ttfamily gui.\+usb\+\_\+path\+\_\+entry = ttk.\+Combobox(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, state="{}readonly"{})}
-
-\Hypertarget{namespacegui_af7500ffec2c2b96c309d0a33f5d29f23}\label{namespacegui_af7500ffec2c2b96c309d0a33f5d29f23} 
-\index{gui@{gui}!value@{value}}
-\index{value@{value}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{value}{value}}
-{\footnotesize\ttfamily gui.\+value}
-
-\Hypertarget{namespacegui_ab7e8df3b79d90e9edce4b224438ebe0e}\label{namespacegui_ab7e8df3b79d90e9edce4b224438ebe0e} 
-\index{gui@{gui}!variable@{variable}}
-\index{variable@{variable}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{variable}{variable}}
-{\footnotesize\ttfamily gui.\+variable}
-
-\Hypertarget{namespacegui_ad00cdd7b5aac01c26b518c55277fefab}\label{namespacegui_ad00cdd7b5aac01c26b518c55277fefab} 
-\index{gui@{gui}!verify\_button@{verify\_button}}
-\index{verify\_button@{verify\_button}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{verify\_button}{verify\_button}}
-{\footnotesize\ttfamily gui.\+verify\+\_\+button = Button(\mbox{\hyperlink{namespacegui_a82aea24dec4e3d438a7b92b096db9523}{root}}, \mbox{\hyperlink{namespacegui_a4a73208f8fcd100e66dc1e2ee2716b9e}{text}}="{}Verify Signature"{}, \mbox{\hyperlink{namespacegui_a549921291b6e56f3405d2bc899ef755e}{command}}=\mbox{\hyperlink{namespacegui_af9daf0f262d699e87c9332f4aa62bdf5}{handle\+\_\+verify\+\_\+button\+\_\+click}})}
-
-\Hypertarget{namespacegui_a65051a99ae29968adff86de0ec16e342}\label{namespacegui_a65051a99ae29968adff86de0ec16e342} 
-\index{gui@{gui}!weight@{weight}}
-\index{weight@{weight}!gui@{gui}}
-\doxysubsubsection{\texorpdfstring{weight}{weight}}
-{\footnotesize\ttfamily gui.\+weight}
-
+It makes sure that if there is at least one USB device connected, it will be selected by default in the GUI and if there are no USB devices connected, the box will be empty. 

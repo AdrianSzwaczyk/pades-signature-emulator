@@ -1,0 +1,41 @@
+\doxysection{PAd\+ES/src/pades\+\_\+gui.py File Reference}
+\hypertarget{pades__gui_8py}{}\label{pades__gui_8py}\index{PAdES/src/pades\_gui.py@{PAdES/src/pades\_gui.py}}
+
+
+GUI for signing and verifying PDF files using RSA with PADES standard.  
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacepades__gui}{pades\+\_\+gui}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacepades__gui_a18c49b46c223c55775c7f4596f6e87cf}{pades\+\_\+gui.\+update\+\_\+mode}} ()
+\begin{DoxyCompactList}\small\item\em Switch between \textquotesingle{}sign\textquotesingle{} and \textquotesingle{}verify\textquotesingle{} modes in the GUI. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacepades__gui_a8598bed41ba5f59abbe838ca77f51d40}{pades\+\_\+gui.\+sign\+\_\+document}} ()
+\begin{DoxyCompactList}\small\item\em Handles the process of signing a selected PDF file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacepades__gui_a1e216ac1a27151f048ab4b41f078459a}{pades\+\_\+gui.\+handle\+\_\+sign\+\_\+button\+\_\+click}} ()
+\begin{DoxyCompactList}\small\item\em Function handles the sign button click event in the GUI. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacepades__gui_a781306cb84ddef08dbe191e69a3ab983}{pades\+\_\+gui.\+handle\+\_\+verify\+\_\+button\+\_\+click}} ()
+\begin{DoxyCompactList}\small\item\em Function handles the verify button click event in the GUI. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacepades__gui_af7a82fd1fb661523bf484379de8fea9d}{pades\+\_\+gui.\+main\+\_\+pades}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the GUI for the PADES application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+GUI for signing and verifying PDF files using RSA with PADES standard. 
+
+This GUI application allows users to\+:
+\begin{DoxyItemize}
+\item Sign PDF documents using a private key stored on a USB drive.
+\item Verify signed PDFs using a public RSA key. There are two modes\+: signing and verifying. The signing mode requires a PIN for the private key, while the verifying mode requires a public key file. It uses AES + PBKDF2 for private key decryption and SHA256 + RSA for digital signing. ~\newline
+ Used libraries\+:
+\item \textquotesingle{}tkinter\textquotesingle{} for GUI components
+\item \textquotesingle{}pypdf\textquotesingle{} for PDF manipulation
+\item \textquotesingle{}pycryptodome\textquotesingle{} for cryptographic operations
+\item \textquotesingle{}os\textquotesingle{} for file handling
+\item \textquotesingle{}threading\textquotesingle{} for threads working in the background Functions from other modules like sign\+\_\+pdf(), decrypt\+\_\+private\+\_\+key(), and verify\+\_\+pdf\+\_\+signature() are used for signing, decrypting, and verifying operations. 
+\end{DoxyItemize}

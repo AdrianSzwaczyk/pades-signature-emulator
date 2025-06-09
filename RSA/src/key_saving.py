@@ -1,3 +1,8 @@
+"""!
+@file key_saving.py
+@brief Contains the function to save RSA keys to a USB device and a specified path.
+"""
+
 import os
 import shutil
 
@@ -15,7 +20,7 @@ def save_keys(private_key, public_key, usb_path, public_key_path, key_name):
     @param public_key_path (str)  The path where the public key will be saved, specified by the user.
     @param key_name (str)  The name to use for the saved keys.
 
-    @return Tuple ([str | None, str | None, bool]) containing the paths to the saved private and public keys, and a boolean indicating if the keys folder was cleared to 
+    @return Tuple ([str | None, str | None, bool]): containing the paths to the saved private and public keys, and a boolean indicating if the keys folder was cleared to 
     show this information on the success text box. If an error occurs it returns (None, None, False).
     """
     try:

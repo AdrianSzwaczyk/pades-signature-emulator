@@ -4,7 +4,7 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{namespacedecrypt__key_ade8444ac2cd3a3ec2e2fa33cf45859ee}{decrypt\+\_\+private\+\_\+key}} (usb\+\_\+path, pin, progress\+\_\+callback)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Decrypts an RSA private key stored on a USB device using AES and a PIN-\/based key derivation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -14,3 +14,29 @@
 \doxysubsubsection{\texorpdfstring{decrypt\_private\_key()}{decrypt\_private\_key()}}
 {\footnotesize\ttfamily decrypt\+\_\+key.\+decrypt\+\_\+private\+\_\+key (\begin{DoxyParamCaption}\item[{}]{usb\+\_\+path,  }\item[{}]{pin,  }\item[{}]{progress\+\_\+callback }\end{DoxyParamCaption})}
 
+
+
+Decrypts an RSA private key stored on a USB device using AES and a PIN-\/based key derivation. 
+
+This function looks for an encrypted private key file inside the "{}keys"{} folder on the specified in params USB path. ~\newline
+ It reads the encrypted data and derives the AES key from the user-\/provided PIN using PBKDF2 with a 128-\/bit salt and 600,000 iterations. ~\newline
+ Decryption is done using AES in EAX mode. Progress updates are reported every 1000 iterations with the callback function.
+
+The function uses the following libraries\+:
+\begin{DoxyItemize}
+\item \textquotesingle{}pycryptodome\textquotesingle{} – Crypto.\+Protocol.\+KDF.\+PBKDF2, Crypto.\+Cipher.\+AES
+\item \textquotesingle{}os\textquotesingle{} – to search for the encrypted file on the USB drive
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em usb\+\_\+path} & (str)\+: The path to the USB device where the encrypted private key is stored. \\
+\hline
+{\em pin} & (str)\+: The PIN used to derive the decryption key. \\
+\hline
+{\em progress\+\_\+callback} & Callable\mbox{[}\mbox{[}int, int\mbox{]}, None\mbox{]}\+: A callback function to show decryption progress.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bytes \texorpdfstring{$\vert$}{|} None\+: The decrypted private key (in bytes) if successful, or None if an error occurs or the key file is missing. 
+\end{DoxyReturn}

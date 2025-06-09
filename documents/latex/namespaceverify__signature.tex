@@ -4,7 +4,7 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{namespaceverify__signature_a71c925802f3100e6a4e301e8cbafc38d}{verify\+\_\+pdf\+\_\+signature}} (pdf\+\_\+path, public\+\_\+key\+\_\+path)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Verify the signature of a PDF file using a public key. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -14,3 +14,23 @@
 \doxysubsubsection{\texorpdfstring{verify\_pdf\_signature()}{verify\_pdf\_signature()}}
 {\footnotesize\ttfamily verify\+\_\+signature.\+verify\+\_\+pdf\+\_\+signature (\begin{DoxyParamCaption}\item[{}]{pdf\+\_\+path,  }\item[{}]{public\+\_\+key\+\_\+path }\end{DoxyParamCaption})}
 
+
+
+Verify the signature of a PDF file using a public key. 
+
+This function opens and reads the PDF file with use of pypdf library, extracts metadata and checks if signature exists. If there is no data it returns False and proper error message. If the signature exists, it constructs PDF content as a text to compute the SHA256 digest and compares it with the stored digest. If those digests match, it means that the PDF has not been changed after signing with the private key. Lastly, it reads the signature as bytes from earlier retrieved metadata, imports public key from the given path, and verifies the signature using the SHA256 digest and the public key. The function uses the following libraries\+:
+\begin{DoxyItemize}
+\item \textquotesingle{}pypdf\textquotesingle{} for PDF parsing
+\item Crypto.\+Public\+Key.\+RSA, Crypto.\+Signature.\+pkcs1\+\_\+15, Crypto.\+Hash.\+SHA256 from the \textquotesingle{}pycryptodome\textquotesingle{} package for cryptographic operations.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdf\+\_\+path} & (str) The path to the PDF file to verify. \\
+\hline
+{\em public\+\_\+key\+\_\+path} & (str) The path to the public key file in .PEM format.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tuple\mbox{[}bool, str\mbox{]} Where the first element is a boolean indicating whether the signature is valid or invalid. Second part is a string with a message specifying the result of the verification process. 
+\end{DoxyReturn}

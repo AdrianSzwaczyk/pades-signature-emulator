@@ -122,15 +122,15 @@ Functions</h2></td></tr>
 <p>Private key is saved in the "keys" catalog on the USB device. If the "keys" folder already exists, all the files inside it are delated to ensure that the folder is empty before saving the new keys. The public key is saved in the specified path provided by the user. Function uses shutil library, which is part of default library to remove files and directories.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">private_key</td><td>The private key to save (bytes), generated from generate_rsa_keys(). </td></tr>
-    <tr><td class="paramname">public_key</td><td>The public key to save (bytes), generated from generate_rsa_keys(). </td></tr>
-    <tr><td class="paramname">usb_path</td><td>The path to the USB device where the private key will be saved, the device was chosen from the list by user. </td></tr>
-    <tr><td class="paramname">public_key_path</td><td>The path where the public key will be saved, specified by the user. </td></tr>
-    <tr><td class="paramname">key_name</td><td>The name to use for the saved keys.</td></tr>
+    <tr><td class="paramname">private_key</td><td>(bytes) The private key to save, generated from generate_rsa_keys(). </td></tr>
+    <tr><td class="paramname">public_key</td><td>(bytes) The public key to save, generated from generate_rsa_keys(). </td></tr>
+    <tr><td class="paramname">usb_path</td><td>(str) The path to the USB device where the private key will be saved, the device was chosen from the list by user. </td></tr>
+    <tr><td class="paramname">public_key_path</td><td>(str) The path where the public key will be saved, specified by the user. </td></tr>
+    <tr><td class="paramname">key_name</td><td>(str) The name to use for the saved keys.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A tuple containing the paths to the saved private and public keys, and a boolean indicating if the keys folder was cleared to show this information on the success text box. If an error occurs it returns (None, None, False). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Tuple ([str | None, str | None, bool]): containing the paths to the saved private and public keys, and a boolean indicating if the keys folder was cleared to show this information on the success text box. If an error occurs it returns (None, None, False). </dd></dl>
 
 </div>
 </div>

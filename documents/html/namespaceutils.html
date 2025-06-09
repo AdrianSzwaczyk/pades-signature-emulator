@@ -80,15 +80,19 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a71c506da23850b77f64739f653f0f4a1" id="r_a71c506da23850b77f64739f653f0f4a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71c506da23850b77f64739f653f0f4a1">browse_public_key_file</a> (entry)</td></tr>
+<tr class="memdesc:a71c506da23850b77f64739f653f0f4a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a file dialog to select a public key file with .PEM extension and inserts the path into a GUI box.  <br /></td></tr>
 <tr class="separator:a71c506da23850b77f64739f653f0f4a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a486c9a37b6f295fc5204ac25e11b66fa" id="r_a486c9a37b6f295fc5204ac25e11b66fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a486c9a37b6f295fc5204ac25e11b66fa">browse_pdf_file</a> (pdf_path_entry)</td></tr>
+<tr class="memdesc:a486c9a37b6f295fc5204ac25e11b66fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a file dialog to select a PDF file (only with .PDF extension) and inserts the path into a GUI box.  <br /></td></tr>
 <tr class="separator:a486c9a37b6f295fc5204ac25e11b66fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf394788d2a9fa14c30bf219c837341d" id="r_aaf394788d2a9fa14c30bf219c837341d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf394788d2a9fa14c30bf219c837341d">get_usb_devices</a> ()</td></tr>
-<tr class="memdesc:aaf394788d2a9fa14c30bf219c837341d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detecting USB devices connected to the system.  <br /></td></tr>
+<tr class="memdesc:aaf394788d2a9fa14c30bf219c837341d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detects currently mounted removable USB storage devices.  <br /></td></tr>
 <tr class="separator:aaf394788d2a9fa14c30bf219c837341d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91f355f1ecbaacf0d961469ea4d8654a" id="r_a91f355f1ecbaacf0d961469ea4d8654a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91f355f1ecbaacf0d961469ea4d8654a">find_usb_with_key</a> (usb_devices)</td></tr>
+<tr class="memdesc:a91f355f1ecbaacf0d961469ea4d8654a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks for the list of USB devices for one containing an encrypted private key.  <br /></td></tr>
 <tr class="separator:a91f355f1ecbaacf0d961469ea4d8654a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a711885353a514441248154b86ba115c3" id="r_a711885353a514441248154b86ba115c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a711885353a514441248154b86ba115c3">update_usb_devices</a> (usb_path_entry)</td></tr>
+<tr class="memdesc:a711885353a514441248154b86ba115c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to update the list of USB devices currently connected to the computer.  <br /></td></tr>
 <tr class="separator:a711885353a514441248154b86ba115c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -107,6 +111,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Opens a file dialog to select a PDF file (only with .PDF extension) and inserts the path into a GUI box. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pdf_path_entry</td><td>Tkinter library Entry widget where the selected PDF path will be inserted. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a71c506da23850b77f64739f653f0f4a1" name="a71c506da23850b77f64739f653f0f4a1"></a>
@@ -123,6 +135,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Opens a file dialog to select a public key file with .PEM extension and inserts the path into a GUI box. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entry</td><td>Tkinter library Entry widget where the selected file path will be inserted. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -141,6 +161,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Looks for the list of USB devices for one containing an encrypted private key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">usb_devices</td><td>list[str]: A list of USB device paths to search. Those paths are returned by <a class="el" href="#aaf394788d2a9fa14c30bf219c837341d" title="Detects currently mounted removable USB storage devices.">get_usb_devices()</a> function.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>str | None: The path to the USB device containing a private key, or None in case there is no USB devices or none of them contains private key. </dd></dl>
+
 </div>
 </div>
 <a id="aaf394788d2a9fa14c30bf219c837341d" name="aaf394788d2a9fa14c30bf219c837341d"></a>
@@ -158,9 +187,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Detecting USB devices connected to the system. </p>
+<p>Detects currently mounted removable USB storage devices. </p>
+<p>Detecting USB devices connected to the system.</p>
+<p>This function uses the <code>psutil</code> library to list all disks and filters them to find those that are removable (so the USB devices).</p>
+<dl class="section return"><dt>Returns</dt><dd>list[str]: A list of connected device paths.</dd></dl>
 <p>This function uses the psutil library to list all disk partitions and filters them to find removable devices (so basicly typical USB drivers).</p>
-<dl class="section return"><dt>Returns</dt><dd>A list of found and filtered USB device paths. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>list[str]: A list of found and filtered USB device paths. </dd></dl>
 
 </div>
 </div>
@@ -178,6 +210,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Allows to update the list of USB devices currently connected to the computer. </p>
+<p>It auto-selects one containing a private key.</p>
+<p>It makes sure that if there is a USB device connected with encrypted private key, it will be selected by default in the GUI and if there are no USB devices connected, the box will be empty. It uses the <a class="el" href="#aaf394788d2a9fa14c30bf219c837341d" title="Detects currently mounted removable USB storage devices.">get_usb_devices()</a> function to retrieve the list of USB devices and the <a class="el" href="#a91f355f1ecbaacf0d961469ea4d8654a" title="Looks for the list of USB devices for one containing an encrypted private key.">find_usb_with_key()</a> function to filter them and to get path of a device with a private key.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">usb_path_entry</td><td>Tkinter library Combobox widget to update and populate with USB devices. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

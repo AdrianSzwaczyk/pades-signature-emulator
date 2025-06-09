@@ -18,17 +18,23 @@
 
 Encrypts a private key using AES symetric encryption, where the encryption key is the user-\/provided PIN using PBKDF2 (Password-\/\+Based Key Derivation Function 2). 
 
-The resulting encrypted output is composed of\+: salt (16 bytes) + nonce (16 bytes) + authentication tag (16 bytes) + ciphertext (N bytes).
+Derives a 256-\/bit AES key from a user-\/provided PIN using PBKDF2 with a 128-\/bit random salt and 600,000 iterations. The private key is encrypted using AES in EAX mode. Progress is reported via a callback every 1000 iterations to update the GUI progress bar to inform the user about process.
+
+Used libraries\+:
+\begin{DoxyItemize}
+\item {\ttfamily pycryptodome} – for AES and PBKDF2 ({\ttfamily Crypto.\+Cipher.\+AES}, {\ttfamily Crypto.\+Protocol.\+KDF})
+\item {\ttfamily os} – for secure salt generation
+\end{DoxyItemize}
 
 
 \begin{DoxyParams}{Parameters}
-{\em private\+\_\+key} & The private key to encrypt (bytes). \\
+{\em private\+\_\+key} & (bytes) The private key to encrypt. \\
 \hline
-{\em pin} & The password used to derive the encryption key. \\
+{\em pin} & (str) The password used to derive the encryption key. \\
 \hline
-{\em progress\+\_\+callback} & A callback function to update the GUI progress bar.\\
+{\em progress\+\_\+callback} & (Callable\mbox{[}\mbox{[}int, int\mbox{]}, None\mbox{]}) A callback function to update the GUI progress bar.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The encrypted private key as bytes, or None if an error occurs. 
+The encrypted private key as bytes, or None if an error occurs. The resulting encrypted output is composed of\+: salt (16 bytes) + nonce (16 bytes) + authentication tag (16 bytes) + ciphertext (N bytes). 
 \end{DoxyReturn}

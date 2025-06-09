@@ -101,7 +101,8 @@ Functions</h2></td></tr>
 
 <p>Generating two RSA keys: a private key and a public key (4096 bits). </p>
 <p>Both keys are stored in PEM format in bytes format.</p>
-<dl class="section return"><dt>Returns</dt><dd>A tuple containing the private key and public key in bytes format. If an error occurs, returned tuple is (None, None). </dd></dl>
+<p>This function uses the <code>Crypto.PublicKey.RSA</code> module from the <code>pycryptodome</code> package to generate a secure RSA key pair. The private and public keys are exported in .PEM format as bytes.</p>
+<dl class="section return"><dt>Returns</dt><dd>Tuple ([str | None, str | None]): containing the private key and public key in bytes format. If an error occurs, returned tuple is (None, None). </dd></dl>
 
 </div>
 </div>

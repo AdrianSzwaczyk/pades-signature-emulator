@@ -80,6 +80,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ade8444ac2cd3a3ec2e2fa33cf45859ee" id="r_ade8444ac2cd3a3ec2e2fa33cf45859ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade8444ac2cd3a3ec2e2fa33cf45859ee">decrypt_private_key</a> (usb_path, pin, progress_callback)</td></tr>
+<tr class="memdesc:ade8444ac2cd3a3ec2e2fa33cf45859ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypts an RSA private key stored on a USB device using AES and a PIN-based key derivation.  <br /></td></tr>
 <tr class="separator:ade8444ac2cd3a3ec2e2fa33cf45859ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -106,6 +107,24 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Decrypts an RSA private key stored on a USB device using AES and a PIN-based key derivation. </p>
+<p>This function looks for an encrypted private key file inside the "keys" folder on the specified in params USB path. <br  />
+ It reads the encrypted data and derives the AES key from the user-provided PIN using PBKDF2 with a 128-bit salt and 600,000 iterations. <br  />
+ Decryption is done using AES in EAX mode. Progress updates are reported every 1000 iterations with the callback function.</p>
+<p>The function uses the following libraries:</p><ul>
+<li>'pycryptodome' – Crypto.Protocol.KDF.PBKDF2, Crypto.Cipher.AES</li>
+<li>'os' – to search for the encrypted file on the USB drive</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">usb_path</td><td>(str): The path to the USB device where the encrypted private key is stored. </td></tr>
+    <tr><td class="paramname">pin</td><td>(str): The PIN used to derive the decryption key. </td></tr>
+    <tr><td class="paramname">progress_callback</td><td>Callable[[int, int], None]: A callback function to show decryption progress.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bytes | None: The decrypted private key (in bytes) if successful, or None if an error occurs or the key file is missing. </dd></dl>
 
 </div>
 </div>

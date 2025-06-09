@@ -4,7 +4,7 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{namespacesign__pdf_a6a59f9f43aceaa4219cbfda57f971087}{sign\+\_\+pdf}} (pdf\+\_\+path, private\+\_\+key\+\_\+bytes)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Function is responsible for signing a PDF file using a private RSA key. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -14,3 +14,23 @@
 \doxysubsubsection{\texorpdfstring{sign\_pdf()}{sign\_pdf()}}
 {\footnotesize\ttfamily sign\+\_\+pdf.\+sign\+\_\+pdf (\begin{DoxyParamCaption}\item[{}]{pdf\+\_\+path,  }\item[{}]{private\+\_\+key\+\_\+bytes }\end{DoxyParamCaption})}
 
+
+
+Function is responsible for signing a PDF file using a private RSA key. 
+
+This function opens and reads the PDF file with use of pypdf library, extracts text from each page and computes the SHA256 digest of the content. Later, the signature is created using the private key and the digest. Those data is then added to the PDF metadata as "{}/\+Signature"{} and "{}/\+Digest"{}. Additionally, the "{}/\+Signed\+By"{} field is added with a value "{}\+User A"{}. Finally, the signed PDF is saved to a new file with "{}\+\_\+signed"{} suffix. The function uses the following libraries\+:
+\begin{DoxyItemize}
+\item \textquotesingle{}pypdf\textquotesingle{} for PDF parsing
+\item Crypto.\+Hash.\+SHA256, Crypto.\+Signature.\+pkcs1\+\_\+15, and Crypto.\+Public\+Key.\+RSA from the \textquotesingle{}pycryptodome\textquotesingle{} package for cryptographic operations.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdf\+\_\+path} & (str) The path to the PDF file to verify. \\
+\hline
+{\em public\+\_\+key\+\_\+path} & (str) The path to the public key file in .PEM format.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+: Returns True if the signing was successful, False otherwise. 
+\end{DoxyReturn}

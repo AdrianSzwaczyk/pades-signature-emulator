@@ -28,35 +28,7 @@ var menudata={children:[
 {text:"Namespaces",url:"namespaces.html",children:[
 {text:"Namespace List",url:"namespaces.html"},
 {text:"Namespace Members",url:"namespacemembers.html",children:[
-{text:"All",url:"namespacemembers.html",children:[
-{text:"a",url:"namespacemembers.html#index_a"},
-{text:"b",url:"namespacemembers.html#index_b"},
-{text:"c",url:"namespacemembers.html#index_c"},
-{text:"d",url:"namespacemembers.html#index_d"},
-{text:"e",url:"namespacemembers.html#index_e"},
-{text:"f",url:"namespacemembers.html#index_f"},
-{text:"g",url:"namespacemembers.html#index_g"},
-{text:"h",url:"namespacemembers.html#index_h"},
-{text:"m",url:"namespacemembers.html#index_m"},
-{text:"p",url:"namespacemembers.html#index_p"},
-{text:"r",url:"namespacemembers.html#index_r"},
-{text:"s",url:"namespacemembers.html#index_s"},
-{text:"t",url:"namespacemembers.html#index_t"},
-{text:"u",url:"namespacemembers.html#index_u"},
-{text:"v",url:"namespacemembers.html#index_v"},
-{text:"w",url:"namespacemembers.html#index_w"}]},
-{text:"Functions",url:"namespacemembers_func.html"},
-{text:"Variables",url:"namespacemembers_vars.html",children:[
-{text:"a",url:"namespacemembers_vars.html#index_a"},
-{text:"b",url:"namespacemembers_vars.html#index_b"},
-{text:"c",url:"namespacemembers_vars.html#index_c"},
-{text:"m",url:"namespacemembers_vars.html#index_m"},
-{text:"p",url:"namespacemembers_vars.html#index_p"},
-{text:"r",url:"namespacemembers_vars.html#index_r"},
-{text:"s",url:"namespacemembers_vars.html#index_s"},
-{text:"t",url:"namespacemembers_vars.html#index_t"},
-{text:"u",url:"namespacemembers_vars.html#index_u"},
-{text:"v",url:"namespacemembers_vars.html#index_v"},
-{text:"w",url:"namespacemembers_vars.html#index_w"}]}]}]},
+{text:"All",url:"namespacemembers.html"},
+{text:"Functions",url:"namespacemembers_func.html"}]}]},
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"}]}]}

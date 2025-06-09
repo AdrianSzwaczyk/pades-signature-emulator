@@ -1,0 +1,25 @@
+\doxysection{rsa\+\_\+utils Namespace Reference}
+\hypertarget{namespacersa__utils}{}\label{namespacersa__utils}\index{rsa\_utils@{rsa\_utils}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacersa__utils_aff00e72eb4dac16b67ee3aab9627a347}{get\+\_\+usb\+\_\+devices}} ()
+\begin{DoxyCompactList}\small\item\em Detecting USB devices connected to the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacersa__utils_aff00e72eb4dac16b67ee3aab9627a347}\label{namespacersa__utils_aff00e72eb4dac16b67ee3aab9627a347} 
+\index{rsa\_utils@{rsa\_utils}!get\_usb\_devices@{get\_usb\_devices}}
+\index{get\_usb\_devices@{get\_usb\_devices}!rsa\_utils@{rsa\_utils}}
+\doxysubsubsection{\texorpdfstring{get\_usb\_devices()}{get\_usb\_devices()}}
+{\footnotesize\ttfamily rsa\+\_\+utils.\+get\+\_\+usb\+\_\+devices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Detecting USB devices connected to the system. 
+
+This function uses the psutil library to list all disk partitions and filters them to find removable devices (so basicly typical USB drivers).
+
+\begin{DoxyReturn}{Returns}
+list\mbox{[}str\mbox{]}\+: A list of found and filtered USB device paths. 
+\end{DoxyReturn}

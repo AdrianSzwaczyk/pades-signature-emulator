@@ -1,0 +1,83 @@
+\doxysection{rsa\+\_\+gui Namespace Reference}
+\hypertarget{namespacersa__gui}{}\label{namespacersa__gui}\index{rsa\_gui@{rsa\_gui}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacersa__gui_afa17e1e44e7557b8ac8e7923e0236cb3}{update\+\_\+usb\+\_\+devices}} ()
+\begin{DoxyCompactList}\small\item\em Allows to update the list of USB devices currently connected to the computer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacersa__gui_a83a2d3e7c922c794b41bfea685337495}{browse\+\_\+public\+\_\+key\+\_\+path}} ()
+\begin{DoxyCompactList}\small\item\em Allows to choose a directory where the public key will be saved. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacersa__gui_afebe463d6e13c3a45fb8de0cc676bd15}{generate\+\_\+and\+\_\+save\+\_\+keys}} ()
+\begin{DoxyCompactList}\small\item\em Main logic for GUI, data validation, key generation, encryption and keys saving. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacersa__gui_aa755bad780da7e23e4297cbf94c7e971}{handle\+\_\+generate\+\_\+button\+\_\+click}} ()
+\begin{DoxyCompactList}\small\item\em Function handles the generate button click event in the GUI. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacersa__gui_ac5ef91c272602ded37a99ba4819fb9e7}{main\+\_\+rsa}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the GUI for the RSA key generation application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacersa__gui_a83a2d3e7c922c794b41bfea685337495}\label{namespacersa__gui_a83a2d3e7c922c794b41bfea685337495} 
+\index{rsa\_gui@{rsa\_gui}!browse\_public\_key\_path@{browse\_public\_key\_path}}
+\index{browse\_public\_key\_path@{browse\_public\_key\_path}!rsa\_gui@{rsa\_gui}}
+\doxysubsubsection{\texorpdfstring{browse\_public\_key\_path()}{browse\_public\_key\_path()}}
+{\footnotesize\ttfamily rsa\+\_\+gui.\+browse\+\_\+public\+\_\+key\+\_\+path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Allows to choose a directory where the public key will be saved. 
+
+Retrieves the current path from the GUI field as the initial directory. If the user selects a folder, it replaces default directory path with the new path. \Hypertarget{namespacersa__gui_afebe463d6e13c3a45fb8de0cc676bd15}\label{namespacersa__gui_afebe463d6e13c3a45fb8de0cc676bd15} 
+\index{rsa\_gui@{rsa\_gui}!generate\_and\_save\_keys@{generate\_and\_save\_keys}}
+\index{generate\_and\_save\_keys@{generate\_and\_save\_keys}!rsa\_gui@{rsa\_gui}}
+\doxysubsubsection{\texorpdfstring{generate\_and\_save\_keys()}{generate\_and\_save\_keys()}}
+{\footnotesize\ttfamily rsa\+\_\+gui.\+generate\+\_\+and\+\_\+save\+\_\+keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main logic for GUI, data validation, key generation, encryption and keys saving. 
+
+This function retrieves user inputs from the GUI, which includes\+:
+\begin{DoxyItemize}
+\item PIN to encrypt the private key
+\item USB path where the private key will be saved
+\item Public key save location
+\item Key name for the generated keys Those inputs are validated and if error occurs, it shows a specific error message.
+\end{DoxyItemize}
+
+If the data is correct, it proceeds to generate RSA keys using the \doxylink{namespacekey__generation_ae3c417929d3fd7844f3de9d675ddeafc}{generate\+\_\+rsa\+\_\+keys()} function from \doxylink{key__generation_8py}{key\+\_\+generation.\+py} file. The generated keys are then encrypted using the \doxylink{namespacekey__encryption_aae51bf239682808787b2bcc9306d187b}{encrypt\+\_\+private\+\_\+key()} function from \doxylink{key__encryption_8py}{key\+\_\+encryption.\+py} file, where the PIN is used to derive the encryption key. After encryption, the keys are saved using the \doxylink{namespacekey__saving_af528c23f394abadd10446e40f9f2af91}{save\+\_\+keys()} function from \doxylink{key__saving_8py}{key\+\_\+saving.\+py} file, where the private key is saved on the USB device and the public key is saved in the specified path.
+
+During the process, the GUI is updated to show progress bar and status messages. If any step fails, an error message is displayed, so that the user can be informed about all the issues during the process.
+
+If the keys are successfully generated, encrypted, and saved, a success message is displayed with the paths to the saved keys and information about any other action taken, such as clearing keys directory on the USB drive. \Hypertarget{namespacersa__gui_aa755bad780da7e23e4297cbf94c7e971}\label{namespacersa__gui_aa755bad780da7e23e4297cbf94c7e971} 
+\index{rsa\_gui@{rsa\_gui}!handle\_generate\_button\_click@{handle\_generate\_button\_click}}
+\index{handle\_generate\_button\_click@{handle\_generate\_button\_click}!rsa\_gui@{rsa\_gui}}
+\doxysubsubsection{\texorpdfstring{handle\_generate\_button\_click()}{handle\_generate\_button\_click()}}
+{\footnotesize\ttfamily rsa\+\_\+gui.\+handle\+\_\+generate\+\_\+button\+\_\+click (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function handles the generate button click event in the GUI. 
+
+Disables GUI inputs, shows a progress bar and loading indicator, and launches the key generation process in a new thread. When the process is complete, it restores the GUI to its original state, enabling inputs and hiding the progress bar. \Hypertarget{namespacersa__gui_ac5ef91c272602ded37a99ba4819fb9e7}\label{namespacersa__gui_ac5ef91c272602ded37a99ba4819fb9e7} 
+\index{rsa\_gui@{rsa\_gui}!main\_rsa@{main\_rsa}}
+\index{main\_rsa@{main\_rsa}!rsa\_gui@{rsa\_gui}}
+\doxysubsubsection{\texorpdfstring{main\_rsa()}{main\_rsa()}}
+{\footnotesize\ttfamily rsa\+\_\+gui.\+main\+\_\+rsa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the GUI for the RSA key generation application. 
+
+Creates all necessary components and starts the Tkinter main loop.
+
+This function sets up the main window, adds labels, entry fields, buttons, and a progress bar. All the components are arranged and configured to allow the user to enter a key name, a PIN for the private key, select a USB drive, and specify a path for saving the public key. \Hypertarget{namespacersa__gui_afa17e1e44e7557b8ac8e7923e0236cb3}\label{namespacersa__gui_afa17e1e44e7557b8ac8e7923e0236cb3} 
+\index{rsa\_gui@{rsa\_gui}!update\_usb\_devices@{update\_usb\_devices}}
+\index{update\_usb\_devices@{update\_usb\_devices}!rsa\_gui@{rsa\_gui}}
+\doxysubsubsection{\texorpdfstring{update\_usb\_devices()}{update\_usb\_devices()}}
+{\footnotesize\ttfamily rsa\+\_\+gui.\+update\+\_\+usb\+\_\+devices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Allows to update the list of USB devices currently connected to the computer. 
+
+It makes sure that if there is at least one USB device connected, it will be selected by default in the GUI and if there are no USB devices connected, the box will be empty. 

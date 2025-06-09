@@ -22,17 +22,17 @@ Private key is saved in the "{}keys"{} catalog on the USB device. If the "{}keys
 
 
 \begin{DoxyParams}{Parameters}
-{\em private\+\_\+key} & The private key to save (bytes), generated from generate\+\_\+rsa\+\_\+keys(). \\
+{\em private\+\_\+key} & (bytes) The private key to save, generated from generate\+\_\+rsa\+\_\+keys(). \\
 \hline
-{\em public\+\_\+key} & The public key to save (bytes), generated from generate\+\_\+rsa\+\_\+keys(). \\
+{\em public\+\_\+key} & (bytes) The public key to save, generated from generate\+\_\+rsa\+\_\+keys(). \\
 \hline
-{\em usb\+\_\+path} & The path to the USB device where the private key will be saved, the device was chosen from the list by user. \\
+{\em usb\+\_\+path} & (str) The path to the USB device where the private key will be saved, the device was chosen from the list by user. \\
 \hline
-{\em public\+\_\+key\+\_\+path} & The path where the public key will be saved, specified by the user. \\
+{\em public\+\_\+key\+\_\+path} & (str) The path where the public key will be saved, specified by the user. \\
 \hline
-{\em key\+\_\+name} & The name to use for the saved keys.\\
+{\em key\+\_\+name} & (str) The name to use for the saved keys.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A tuple containing the paths to the saved private and public keys, and a boolean indicating if the keys folder was cleared to show this information on the success text box. If an error occurs it returns (None, None, False). 
+Tuple (\mbox{[}str \texorpdfstring{$\vert$}{|} None, str \texorpdfstring{$\vert$}{|} None, bool\mbox{]})\+: containing the paths to the saved private and public keys, and a boolean indicating if the keys folder was cleared to show this information on the success text box. If an error occurs it returns (None, None, False). 
 \end{DoxyReturn}

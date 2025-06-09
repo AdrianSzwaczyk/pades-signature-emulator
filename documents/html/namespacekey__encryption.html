@@ -109,16 +109,20 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Encrypts a private key using AES symetric encryption, where the encryption key is the user-provided PIN using PBKDF2 (Password-Based Key Derivation Function 2). </p>
-<p>The resulting encrypted output is composed of: salt (16 bytes) + nonce (16 bytes) + authentication tag (16 bytes) + ciphertext (N bytes).</p>
+<p>Derives a 256-bit AES key from a user-provided PIN using PBKDF2 with a 128-bit random salt and 600,000 iterations. The private key is encrypted using AES in EAX mode. Progress is reported via a callback every 1000 iterations to update the GUI progress bar to inform the user about process.</p>
+<p>Used libraries:</p><ul>
+<li><code>pycryptodome</code> – for AES and PBKDF2 (<code>Crypto.Cipher.AES</code>, <code>Crypto.Protocol.KDF</code>)</li>
+<li><code>os</code> – for secure salt generation</li>
+</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">private_key</td><td>The private key to encrypt (bytes). </td></tr>
-    <tr><td class="paramname">pin</td><td>The password used to derive the encryption key. </td></tr>
-    <tr><td class="paramname">progress_callback</td><td>A callback function to update the GUI progress bar.</td></tr>
+    <tr><td class="paramname">private_key</td><td>(bytes) The private key to encrypt. </td></tr>
+    <tr><td class="paramname">pin</td><td>(str) The password used to derive the encryption key. </td></tr>
+    <tr><td class="paramname">progress_callback</td><td>(Callable[[int, int], None]) A callback function to update the GUI progress bar.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The encrypted private key as bytes, or None if an error occurs. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The encrypted private key as bytes, or None if an error occurs. The resulting encrypted output is composed of: salt (16 bytes) + nonce (16 bytes) + authentication tag (16 bytes) + ciphertext (N bytes). </dd></dl>
 
 </div>
 </div>

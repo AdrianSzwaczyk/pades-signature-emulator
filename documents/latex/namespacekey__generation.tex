@@ -20,6 +20,8 @@ Generating two RSA keys\+: a private key and a public key (4096 bits).
 
 Both keys are stored in PEM format in bytes format.
 
+This function uses the {\ttfamily Crypto.\+Public\+Key.\+RSA} module from the {\ttfamily pycryptodome} package to generate a secure RSA key pair. The private and public keys are exported in .PEM format as bytes.
+
 \begin{DoxyReturn}{Returns}
-A tuple containing the private key and public key in bytes format. If an error occurs, returned tuple is (None, None). 
+Tuple (\mbox{[}str \texorpdfstring{$\vert$}{|} None, str \texorpdfstring{$\vert$}{|} None\mbox{]})\+: containing the private key and public key in bytes format. If an error occurs, returned tuple is (None, None). 
 \end{DoxyReturn}

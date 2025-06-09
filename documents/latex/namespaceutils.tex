@@ -4,15 +4,15 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{namespaceutils_a71c506da23850b77f64739f653f0f4a1}{browse\+\_\+public\+\_\+key\+\_\+file}} (entry)
-\item 
+\begin{DoxyCompactList}\small\item\em Opens a file dialog to select a public key file with .PEM extension and inserts the path into a GUI box. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespaceutils_a486c9a37b6f295fc5204ac25e11b66fa}{browse\+\_\+pdf\+\_\+file}} (pdf\+\_\+path\+\_\+entry)
-\item 
+\begin{DoxyCompactList}\small\item\em Opens a file dialog to select a PDF file (only with .PDF extension) and inserts the path into a GUI box. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespaceutils_aaf394788d2a9fa14c30bf219c837341d}{get\+\_\+usb\+\_\+devices}} ()
-\begin{DoxyCompactList}\small\item\em Detecting USB devices connected to the system. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Detects currently mounted removable USB storage devices. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespaceutils_a91f355f1ecbaacf0d961469ea4d8654a}{find\+\_\+usb\+\_\+with\+\_\+key}} (usb\+\_\+devices)
-\item 
+\begin{DoxyCompactList}\small\item\em Looks for the list of USB devices for one containing an encrypted private key. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespaceutils_a711885353a514441248154b86ba115c3}{update\+\_\+usb\+\_\+devices}} (usb\+\_\+path\+\_\+entry)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Allows to update the list of USB devices currently connected to the computer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -22,18 +22,48 @@
 \doxysubsubsection{\texorpdfstring{browse\_pdf\_file()}{browse\_pdf\_file()}}
 {\footnotesize\ttfamily utils.\+browse\+\_\+pdf\+\_\+file (\begin{DoxyParamCaption}\item[{}]{pdf\+\_\+path\+\_\+entry }\end{DoxyParamCaption})}
 
+
+
+Opens a file dialog to select a PDF file (only with .PDF extension) and inserts the path into a GUI box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdf\+\_\+path\+\_\+entry} & Tkinter library Entry widget where the selected PDF path will be inserted. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{namespaceutils_a71c506da23850b77f64739f653f0f4a1}\label{namespaceutils_a71c506da23850b77f64739f653f0f4a1} 
 \index{utils@{utils}!browse\_public\_key\_file@{browse\_public\_key\_file}}
 \index{browse\_public\_key\_file@{browse\_public\_key\_file}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{browse\_public\_key\_file()}{browse\_public\_key\_file()}}
 {\footnotesize\ttfamily utils.\+browse\+\_\+public\+\_\+key\+\_\+file (\begin{DoxyParamCaption}\item[{}]{entry }\end{DoxyParamCaption})}
 
+
+
+Opens a file dialog to select a public key file with .PEM extension and inserts the path into a GUI box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & Tkinter library Entry widget where the selected file path will be inserted. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{namespaceutils_a91f355f1ecbaacf0d961469ea4d8654a}\label{namespaceutils_a91f355f1ecbaacf0d961469ea4d8654a} 
 \index{utils@{utils}!find\_usb\_with\_key@{find\_usb\_with\_key}}
 \index{find\_usb\_with\_key@{find\_usb\_with\_key}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{find\_usb\_with\_key()}{find\_usb\_with\_key()}}
 {\footnotesize\ttfamily utils.\+find\+\_\+usb\+\_\+with\+\_\+key (\begin{DoxyParamCaption}\item[{}]{usb\+\_\+devices }\end{DoxyParamCaption})}
 
+
+
+Looks for the list of USB devices for one containing an encrypted private key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em usb\+\_\+devices} & list\mbox{[}str\mbox{]}\+: A list of USB device paths to search. Those paths are returned by \doxylink{namespaceutils_aaf394788d2a9fa14c30bf219c837341d}{get\+\_\+usb\+\_\+devices()} function.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+str \texorpdfstring{$\vert$}{|} None\+: The path to the USB device containing a private key, or None in case there is no USB devices or none of them contains private key. 
+\end{DoxyReturn}
 \Hypertarget{namespaceutils_aaf394788d2a9fa14c30bf219c837341d}\label{namespaceutils_aaf394788d2a9fa14c30bf219c837341d} 
 \index{utils@{utils}!get\_usb\_devices@{get\_usb\_devices}}
 \index{get\_usb\_devices@{get\_usb\_devices}!utils@{utils}}
@@ -42,12 +72,19 @@
 
 
 
-Detecting USB devices connected to the system. 
+Detects currently mounted removable USB storage devices. 
 
+Detecting USB devices connected to the system.
+
+This function uses the {\ttfamily psutil} library to list all disks and filters them to find those that are removable (so the USB devices).
+
+\begin{DoxyReturn}{Returns}
+list\mbox{[}str\mbox{]}\+: A list of connected device paths.
+\end{DoxyReturn}
 This function uses the psutil library to list all disk partitions and filters them to find removable devices (so basicly typical USB drivers).
 
 \begin{DoxyReturn}{Returns}
-A list of found and filtered USB device paths. 
+list\mbox{[}str\mbox{]}\+: A list of found and filtered USB device paths. 
 \end{DoxyReturn}
 \Hypertarget{namespaceutils_a711885353a514441248154b86ba115c3}\label{namespaceutils_a711885353a514441248154b86ba115c3} 
 \index{utils@{utils}!update\_usb\_devices@{update\_usb\_devices}}
@@ -55,3 +92,16 @@ A list of found and filtered USB device paths.
 \doxysubsubsection{\texorpdfstring{update\_usb\_devices()}{update\_usb\_devices()}}
 {\footnotesize\ttfamily utils.\+update\+\_\+usb\+\_\+devices (\begin{DoxyParamCaption}\item[{}]{usb\+\_\+path\+\_\+entry }\end{DoxyParamCaption})}
 
+
+
+Allows to update the list of USB devices currently connected to the computer. 
+
+It auto-\/selects one containing a private key.
+
+It makes sure that if there is a USB device connected with encrypted private key, it will be selected by default in the GUI and if there are no USB devices connected, the box will be empty. It uses the \doxylink{namespaceutils_aaf394788d2a9fa14c30bf219c837341d}{get\+\_\+usb\+\_\+devices()} function to retrieve the list of USB devices and the \doxylink{namespaceutils_a91f355f1ecbaacf0d961469ea4d8654a}{find\+\_\+usb\+\_\+with\+\_\+key()} function to filter them and to get path of a device with a private key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em usb\+\_\+path\+\_\+entry} & Tkinter library Combobox widget to update and populate with USB devices. \\
+\hline
+\end{DoxyParams}

@@ -80,6 +80,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a6a59f9f43aceaa4219cbfda57f971087" id="r_a6a59f9f43aceaa4219cbfda57f971087"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a59f9f43aceaa4219cbfda57f971087">sign_pdf</a> (pdf_path, private_key_bytes)</td></tr>
+<tr class="memdesc:a6a59f9f43aceaa4219cbfda57f971087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function is responsible for signing a PDF file using a private RSA key.  <br /></td></tr>
 <tr class="separator:a6a59f9f43aceaa4219cbfda57f971087"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -101,6 +102,20 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Function is responsible for signing a PDF file using a private RSA key. </p>
+<p>This function opens and reads the PDF file with use of pypdf library, extracts text from each page and computes the SHA256 digest of the content. Later, the signature is created using the private key and the digest. Those data is then added to the PDF metadata as "/Signature" and "/Digest". Additionally, the "/SignedBy" field is added with a value "User A". Finally, the signed PDF is saved to a new file with "_signed" suffix. The function uses the following libraries:</p><ul>
+<li>'pypdf' for PDF parsing</li>
+<li>Crypto.Hash.SHA256, Crypto.Signature.pkcs1_15, and Crypto.PublicKey.RSA from the 'pycryptodome' package for cryptographic operations.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pdf_path</td><td>(str) The path to the PDF file to verify. </td></tr>
+    <tr><td class="paramname">public_key_path</td><td>(str) The path to the public key file in .PEM format.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool: Returns True if the signing was successful, False otherwise. </dd></dl>
 
 </div>
 </div>

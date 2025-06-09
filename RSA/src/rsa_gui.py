@@ -1,5 +1,5 @@
 """!
-@file gui.py
+@file rsa_gui.py
 @brief This file contains the GUI for the RSA key generation application.
 @details This application contains a graphical user interface (GUI) that allows users to generate RSA keys, encrypt the private key with a PIN, 
 and save the keys to a USB device and a specified public key path. The GUI is built using Tkinter.
@@ -10,7 +10,7 @@ from tkinter.ttk import Progressbar
 from key_generation import *
 from key_encryption import *
 from key_saving import *
-from utils import *
+from rsa_utils import *
 import os
 import threading
 
@@ -19,7 +19,7 @@ def update_usb_devices():
     @brief Allows to update the list of USB devices currently connected to the computer.
 
     @details It makes sure that if there is at least one USB device connected, it will be selected by default in the GUI and if 
-    there are no USB devices connecter, the box will be empty.
+    there are no USB devices connected, the box will be empty.
     """
     usb_devices = get_usb_devices()
     usb_path_entry['values'] = usb_devices
@@ -148,7 +148,7 @@ def handle_generate_button_click():
 
     threading.Thread(target=task).start()
 
-def main():
+def main_rsa():
     """!
     @brief Initializes the GUI for the RSA key generation application. Creates all necessary components and starts the Tkinter main loop.
 
@@ -201,4 +201,4 @@ def main():
     root.mainloop()
 
 if __name__ == "__main__":
-    main()
+    main_rsa()

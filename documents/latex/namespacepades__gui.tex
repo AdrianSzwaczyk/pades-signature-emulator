@@ -1,0 +1,72 @@
+\doxysection{pades\+\_\+gui Namespace Reference}
+\hypertarget{namespacepades__gui}{}\label{namespacepades__gui}\index{pades\_gui@{pades\_gui}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacepades__gui_a18c49b46c223c55775c7f4596f6e87cf}{update\+\_\+mode}} ()
+\begin{DoxyCompactList}\small\item\em Switch between \textquotesingle{}sign\textquotesingle{} and \textquotesingle{}verify\textquotesingle{} modes in the GUI. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacepades__gui_a8598bed41ba5f59abbe838ca77f51d40}{sign\+\_\+document}} ()
+\begin{DoxyCompactList}\small\item\em Handles the process of signing a selected PDF file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacepades__gui_a1e216ac1a27151f048ab4b41f078459a}{handle\+\_\+sign\+\_\+button\+\_\+click}} ()
+\begin{DoxyCompactList}\small\item\em Function handles the sign button click event in the GUI. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacepades__gui_a781306cb84ddef08dbe191e69a3ab983}{handle\+\_\+verify\+\_\+button\+\_\+click}} ()
+\begin{DoxyCompactList}\small\item\em Function handles the verify button click event in the GUI. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacepades__gui_af7a82fd1fb661523bf484379de8fea9d}{main\+\_\+pades}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the GUI for the PADES application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacepades__gui_a1e216ac1a27151f048ab4b41f078459a}\label{namespacepades__gui_a1e216ac1a27151f048ab4b41f078459a} 
+\index{pades\_gui@{pades\_gui}!handle\_sign\_button\_click@{handle\_sign\_button\_click}}
+\index{handle\_sign\_button\_click@{handle\_sign\_button\_click}!pades\_gui@{pades\_gui}}
+\doxysubsubsection{\texorpdfstring{handle\_sign\_button\_click()}{handle\_sign\_button\_click()}}
+{\footnotesize\ttfamily pades\+\_\+gui.\+handle\+\_\+sign\+\_\+button\+\_\+click (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function handles the sign button click event in the GUI. 
+
+Disables GUI inputs, shows a progress bar and loading indicator, and launches the signing process in a new thread. When the process is complete, it restores the GUI to its original state, enabling inputs and hiding the progress bar. \doxylink{namespacepades__gui_a8598bed41ba5f59abbe838ca77f51d40}{sign\+\_\+document()} function is called to perform the signing operation. \Hypertarget{namespacepades__gui_a781306cb84ddef08dbe191e69a3ab983}\label{namespacepades__gui_a781306cb84ddef08dbe191e69a3ab983} 
+\index{pades\_gui@{pades\_gui}!handle\_verify\_button\_click@{handle\_verify\_button\_click}}
+\index{handle\_verify\_button\_click@{handle\_verify\_button\_click}!pades\_gui@{pades\_gui}}
+\doxysubsubsection{\texorpdfstring{handle\_verify\_button\_click()}{handle\_verify\_button\_click()}}
+{\footnotesize\ttfamily pades\+\_\+gui.\+handle\+\_\+verify\+\_\+button\+\_\+click (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function handles the verify button click event in the GUI. 
+
+Retrieves the PDF file path and public key path from the GUI. If both are valid, it verifies the PDF\textquotesingle{}s signature using the public key. ~\newline
+ Displays a success or error message based on the verification result. verify\+\_\+pdf\+\_\+signature() function is used to perform the verification operation. \Hypertarget{namespacepades__gui_af7a82fd1fb661523bf484379de8fea9d}\label{namespacepades__gui_af7a82fd1fb661523bf484379de8fea9d} 
+\index{pades\_gui@{pades\_gui}!main\_pades@{main\_pades}}
+\index{main\_pades@{main\_pades}!pades\_gui@{pades\_gui}}
+\doxysubsubsection{\texorpdfstring{main\_pades()}{main\_pades()}}
+{\footnotesize\ttfamily pades\+\_\+gui.\+main\+\_\+pades (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the GUI for the PADES application. 
+
+Creates all necessary components and starts the Tkinter main loop.
+
+This function sets up the main window, adds labels, entry fields, buttons, and a progress bar. All the components are arranged and configured to allow the user to enter a PIN for their private key, select a USB drive, choose a PDF file to sign or verify, and specify a public key for verification. \Hypertarget{namespacepades__gui_a8598bed41ba5f59abbe838ca77f51d40}\label{namespacepades__gui_a8598bed41ba5f59abbe838ca77f51d40} 
+\index{pades\_gui@{pades\_gui}!sign\_document@{sign\_document}}
+\index{sign\_document@{sign\_document}!pades\_gui@{pades\_gui}}
+\doxysubsubsection{\texorpdfstring{sign\_document()}{sign\_document()}}
+{\footnotesize\ttfamily pades\+\_\+gui.\+sign\+\_\+document (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles the process of signing a selected PDF file. 
+
+This function retrieves the PIN, PDF file path, and USB device path from the GUI entries. It validates the paths, decrypts the private key using the provided PIN, and then signs the PDF file with that key. If any step fails, it shows an error with proper message. If the signing is successful, it updates the GUI to inform the user. decrypt\+\_\+private\+\_\+key() function is used to decrypt the private key, and sign\+\_\+pdf() function is used to sign the PDF file. \Hypertarget{namespacepades__gui_a18c49b46c223c55775c7f4596f6e87cf}\label{namespacepades__gui_a18c49b46c223c55775c7f4596f6e87cf} 
+\index{pades\_gui@{pades\_gui}!update\_mode@{update\_mode}}
+\index{update\_mode@{update\_mode}!pades\_gui@{pades\_gui}}
+\doxysubsubsection{\texorpdfstring{update\_mode()}{update\_mode()}}
+{\footnotesize\ttfamily pades\+\_\+gui.\+update\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Switch between \textquotesingle{}sign\textquotesingle{} and \textquotesingle{}verify\textquotesingle{} modes in the GUI. 
+
+Only important elements are displayed in each mode. 

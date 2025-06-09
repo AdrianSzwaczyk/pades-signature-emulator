@@ -1,0 +1,43 @@
+\doxysection{PAd\+ES/src/pades\+\_\+utils.py File Reference}
+\hypertarget{pades__utils_8py}{}\label{pades__utils_8py}\index{PAdES/src/pades\_utils.py@{PAdES/src/pades\_utils.py}}
+
+
+Utility functions for file browsing and USB detection used in the PADES application.  
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacepades__utils}{pades\+\_\+utils}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacepades__utils_a6d68602aa55621cbdba88f01e58d8a1d}{pades\+\_\+utils.\+browse\+\_\+public\+\_\+key\+\_\+file}} (entry)
+\begin{DoxyCompactList}\small\item\em Opens a file dialog to select a public key file with .PEM extension and inserts the path into a GUI box. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacepades__utils_a07ec2dab1586af4b346741eb5bbb020c}{pades\+\_\+utils.\+browse\+\_\+pdf\+\_\+file}} (pdf\+\_\+path\+\_\+entry)
+\begin{DoxyCompactList}\small\item\em Opens a file dialog to select a PDF file (only with .PDF extension) and inserts the path into a GUI box. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacepades__utils_a812f59718745ff848df65ae4d9ab167c}{pades\+\_\+utils.\+get\+\_\+usb\+\_\+devices}} ()
+\begin{DoxyCompactList}\small\item\em Detects currently mounted removable USB storage devices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacepades__utils_a4a1d91e885b30d89eab305fb65993991}{pades\+\_\+utils.\+find\+\_\+usb\+\_\+with\+\_\+key}} (usb\+\_\+devices)
+\begin{DoxyCompactList}\small\item\em Looks for the list of USB devices for one containing an encrypted private key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacepades__utils_a5223d8cf15a4382fddce9ee10e56924c}{pades\+\_\+utils.\+update\+\_\+usb\+\_\+devices}} (usb\+\_\+path\+\_\+entry)
+\begin{DoxyCompactList}\small\item\em Allows to update the list of USB devices currently connected to the computer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility functions for file browsing and USB detection used in the PADES application. 
+
+This module provides helper functions to\+:
+\begin{DoxyItemize}
+\item Browse for public key and PDF files using file dialogs
+\item Detect removable USB devices and search for private keys
+\item Update GUI elements based on available USB devices
+\end{DoxyItemize}
+
+Used libraries\+:
+\begin{DoxyItemize}
+\item \textquotesingle{}psutil\textquotesingle{} for detecting available USB devices
+\item \textquotesingle{}tkinter.\+filedialog\textquotesingle{} for file selection dialogs
+\item \textquotesingle{}os\textquotesingle{} for path handling and filesystem operations 
+\end{DoxyItemize}

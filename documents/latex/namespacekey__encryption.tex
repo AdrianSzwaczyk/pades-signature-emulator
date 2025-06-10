@@ -18,7 +18,7 @@
 
 Encrypts a private key using AES symetric encryption, where the encryption key is the user-\/provided PIN using PBKDF2 (Password-\/\+Based Key Derivation Function 2). 
 
-Derives a 256-\/bit AES key from a user-\/provided PIN using PBKDF2 with a 128-\/bit random salt and 600,000 iterations. The private key is encrypted using AES in EAX mode. Progress is reported via a callback every 1000 iterations to update the GUI progress bar to inform the user about process.
+Derives a 256-\/bit AES key from a user-\/provided PIN using PBKDF2 with a 128-\/bit random salt and 600,000 iterations. The private key is encrypted using AES in EAX mode. Progress is reported via a callback messages to update the GUI to inform the user about process.
 
 Used libraries\+:
 \begin{DoxyItemize}
@@ -32,7 +32,7 @@ Used libraries\+:
 \hline
 {\em pin} & (str) The password used to derive the encryption key. \\
 \hline
-{\em progress\+\_\+callback} & (Callable\mbox{[}\mbox{[}int, int\mbox{]}, None\mbox{]}) A callback function to update the GUI progress bar.\\
+{\em progress\+\_\+callback} & (Callable\mbox{[}\mbox{[}str\mbox{]}, None\mbox{]}) A callback function to update the GUI messages.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

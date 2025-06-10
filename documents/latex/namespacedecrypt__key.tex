@@ -20,7 +20,7 @@ Decrypts an RSA private key stored on a USB device using AES and a PIN-\/based k
 
 This function looks for an encrypted private key file inside the "{}keys"{} folder on the specified in params USB path. ~\newline
  It reads the encrypted data and derives the AES key from the user-\/provided PIN using PBKDF2 with a 128-\/bit salt and 600,000 iterations. ~\newline
- Decryption is done using AES in EAX mode. Progress updates are reported every 1000 iterations with the callback function.
+ Decryption is done using AES in EAX mode. Progress updates are reported with the callback function.
 
 The function uses the following libraries\+:
 \begin{DoxyItemize}
@@ -34,7 +34,7 @@ The function uses the following libraries\+:
 \hline
 {\em pin} & (str)\+: The PIN used to derive the decryption key. \\
 \hline
-{\em progress\+\_\+callback} & Callable\mbox{[}\mbox{[}int, int\mbox{]}, None\mbox{]}\+: A callback function to show decryption progress.\\
+{\em progress\+\_\+callback} & Callable\mbox{[}\mbox{[}str\mbox{]}, None\mbox{]}\+: A callback function to show decryption progress.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

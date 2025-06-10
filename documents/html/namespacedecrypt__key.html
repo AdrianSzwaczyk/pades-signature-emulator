@@ -111,7 +111,7 @@ Functions</h2></td></tr>
 <p>Decrypts an RSA private key stored on a USB device using AES and a PIN-based key derivation. </p>
 <p>This function looks for an encrypted private key file inside the "keys" folder on the specified in params USB path. <br  />
  It reads the encrypted data and derives the AES key from the user-provided PIN using PBKDF2 with a 128-bit salt and 600,000 iterations. <br  />
- Decryption is done using AES in EAX mode. Progress updates are reported every 1000 iterations with the callback function.</p>
+ Decryption is done using AES in EAX mode. Progress updates are reported with the callback function.</p>
 <p>The function uses the following libraries:</p><ul>
 <li>'pycryptodome' – Crypto.Protocol.KDF.PBKDF2, Crypto.Cipher.AES</li>
 <li>'os' – to search for the encrypted file on the USB drive</li>
@@ -120,7 +120,7 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">usb_path</td><td>(str): The path to the USB device where the encrypted private key is stored. </td></tr>
     <tr><td class="paramname">pin</td><td>(str): The PIN used to derive the decryption key. </td></tr>
-    <tr><td class="paramname">progress_callback</td><td>Callable[[int, int], None]: A callback function to show decryption progress.</td></tr>
+    <tr><td class="paramname">progress_callback</td><td>Callable[[str], None]: A callback function to show decryption progress.</td></tr>
   </table>
   </dd>
 </dl>

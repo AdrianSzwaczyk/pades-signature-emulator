@@ -57,7 +57,7 @@ def generate_and_save_keys():
     After encryption, the keys are saved using the save_keys() function from key_saving.py file, where the private key is saved on the USB device and the public key
     is saved in the specified path.
 
-    During the process, the GUI is updated to show progress bar and status messages. If any step fails, an error message is displayed, so that the user can be informed about
+    During the process, the GUI is updated to show status messages. If any step fails, an error message is displayed, so that the user can be informed about
     all the issues during the process.
 
     If the keys are successfully generated, encrypted, and saved, a success message is displayed with the paths to the saved keys and information about any other
@@ -85,13 +85,12 @@ def generate_and_save_keys():
         messagebox.showerror("Error", "Key generation failed")
         return
     
-    def progress_callback(current, total):
-        progress_var.set(current)
-        progress_bar.update_idletasks()
+    def progress_callback(message):
+        progress_label.config(text=message)
+        progress_label.update_idletasks()
     
     progress_label.config(text="Encrypting private key...")
     progress_label.update_idletasks()
-    progress_bar["maximum"] = 600000
     private_key = encrypt_private_key(private_key, pin, progress_callback)
     if private_key is None:
         messagebox.showerror("Error", "Encryption failed")
@@ -114,15 +113,14 @@ def handle_generate_button_click():
     """! 
     @brief Function handles the generate button click event in the GUI.
 
-    @details Disables GUI inputs, shows a progress bar and loading indicator, and launches the key generation process in a new thread.
-    When the process is complete, it restores the GUI to its original state, enabling inputs and hiding the progress bar.
+    @details Disables GUI inputs, shows a progress messages and loading indicator, and launches the key generation process in a new thread.
+    When the process is complete, it restores the GUI to its original state, enabling inputs and hiding progress messages.
     """
     def task():
         generate_and_save_keys()
         progress_label.config(text="")
         root.config(cursor="")
         root.update()
-        progress_bar.grid_remove()
         progress_label.grid_remove()
         pin_entry.config(state="normal")
         key_name_entry.config(state="normal")
@@ -134,8 +132,7 @@ def handle_generate_button_click():
         progress_var.set(0)
 
     root.config(cursor="wait")
-    progress_bar.grid(row=6, column=0, columnspan=3, padx=10, pady=5, sticky="ew")
-    progress_label.grid(row=7, column=0, columnspan=3, pady=5)
+    progress_label.grid(row=6, column=0, columnspan=3, pady=5)
     root.update()
 
     pin_entry.config(state="disabled")
@@ -153,11 +150,11 @@ def main_rsa():
     @brief Initializes the GUI for the RSA key generation application. Creates all necessary components and starts the Tkinter main loop.
 
     @details
-    This function sets up the main window, adds labels, entry fields, buttons, and a progress bar. All the components are arranged and configured to allow the user 
+    This function sets up the main window, adds labels, entry fields and buttons. All the components are arranged and configured to allow the user 
     to enter a key name, a PIN for the private key, select a USB drive, and specify a path for saving the public key.
     """
     global root, pin_entry, key_name_entry, usb_path_entry, pub_key_path_entry
-    global progress_label, progress_bar, progress_var
+    global progress_label, progress_var
     global generate_button, refresh_button, browse_button
 
     root = Tk()
@@ -191,7 +188,6 @@ def main_rsa():
 
     progress_var = IntVar()
     progress_label = Label(root, text="Processing...")
-    progress_bar = Progressbar(root, variable=progress_var, maximum=600000)
 
     refresh_button = Button(root, text="Refresh USB Devices", command=update_usb_devices)
     refresh_button.grid(row=4, column=0, columnspan=3, padx=10, pady=5, sticky="ew")

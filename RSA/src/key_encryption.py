@@ -13,7 +13,6 @@ def encrypt_private_key(private_key, pin, progress_callback):
 
     @details
     Derives a 256-bit AES key from a user-provided PIN using PBKDF2 with a 128-bit random salt and 600,000 iterations. The private key is encrypted using AES in EAX mode.
-    Progress is reported via a callback every 1000 iterations to update the GUI progress bar to inform the user about process.
 
     Used libraries:
     - `pycryptodome` – for AES and PBKDF2 (`Crypto.Cipher.AES`, `Crypto.Protocol.KDF`)
@@ -21,7 +20,7 @@ def encrypt_private_key(private_key, pin, progress_callback):
 
     @param private_key (bytes)  The private key to encrypt.
     @param pin (str)  The password used to derive the encryption key.
-    @param progress_callback (Callable[[int, int], None])  A callback function to update the GUI progress bar.
+    @param progress_callback (Callable[[str], None])  A callback function to update the GUI progress with a status message.
 
     @return  The encrypted private key as bytes, or None if an error occurs.
     The resulting encrypted output is composed of: 
@@ -30,14 +29,8 @@ def encrypt_private_key(private_key, pin, progress_callback):
     try:
         salt = os.urandom(16)  # 128-bit salt (16 bytes)
         iterations = 600000
-        key = None
-        
-        for i in range(iterations):
-            key = PBKDF2(pin, salt, dkLen=32, count=1) if key is None else \
-                  PBKDF2(pin, salt, dkLen=32, count=1, prf=lambda p, s: key)
-            if i % 1000 == 0: 
-                progress_callback(i + 1, iterations) # update GUI progress bar every 1000 iterations
-        
+        key = PBKDF2(pin, salt, dkLen=32, count=iterations)
+        progress_callback("Encrypting...")
         cipher = AES.new(key, AES.MODE_EAX)
         encrypted_key, tag = cipher.encrypt_and_digest(private_key)
         return salt + cipher.nonce + tag + encrypted_key

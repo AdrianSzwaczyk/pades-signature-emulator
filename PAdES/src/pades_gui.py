@@ -76,9 +76,9 @@ def sign_document():
     progress_label.config(text="Decrypting key...")
     progress_label.update_idletasks()
 
-    def progress_callback(current, total):
-        progress_var.set(current)
-        progress_bar.update_idletasks()
+    def progress_callback(message):
+        progress_label.config(text=message)
+        progress_label.update_idletasks()
 
     private_key = decrypt_private_key(usb_path, pin, progress_callback)
     if private_key is None:
@@ -98,8 +98,8 @@ def handle_sign_button_click():
     """! 
     @brief Function handles the sign button click event in the GUI.
 
-    @details Disables GUI inputs, shows a progress bar and loading indicator, and launches the signing process in a new thread.
-    When the process is complete, it restores the GUI to its original state, enabling inputs and hiding the progress bar.
+    @details Disables GUI inputs, shows a progress messages and loading indicator, and launches the signing process in a new thread.
+    When the process is complete, it restores the GUI to its original state, enabling inputs and hiding the progress messages.
     sign_document() function is called to perform the signing operation.
     """
     def task():
@@ -107,7 +107,6 @@ def handle_sign_button_click():
         progress_label.config(text="")
         root.config(cursor="")
         root.update()
-        progress_bar.grid_remove()
         progress_label.grid_remove()
         pin_entry.config(state="normal")
         pdf_path_entry.config(state="normal")
@@ -118,8 +117,7 @@ def handle_sign_button_click():
         progress_var.set(0)
 
     root.config(cursor="wait")
-    progress_bar.grid(row=8, column=0, columnspan=3, padx=10, pady=5, sticky="ew")
-    progress_label.grid(row=9, column=0, columnspan=3, pady=5)
+    progress_label.grid(row=8, column=0, columnspan=3, pady=5)
     root.update()
 
     pin_entry.config(state="disabled")
@@ -159,12 +157,12 @@ def main_pades():
     @brief Initializes the GUI for the PADES application. Creates all necessary components and starts the Tkinter main loop.
 
     @details
-    This function sets up the main window, adds labels, entry fields, buttons, and a progress bar. All the components are arranged and configured to allow the user 
+    This function sets up the main window, adds labels, entry fields and buttons. All the components are arranged and configured to allow the user 
     to enter a PIN for their private key, select a USB drive, choose a PDF file to sign or verify, and specify a public key for verification.
     """
     global root, mode_var, pin_entry, usb_path_entry, sign_button, refresh_button, \
            verify_button, pin_label, usb_label, public_key_label, public_key_entry, \
-           public_key_browse, pdf_path_entry, browse_button, progress_label, progress_bar, progress_var
+           public_key_browse, pdf_path_entry, browse_button, progress_label, progress_var
 
     root = Tk()
     root.title("PAdES PDF Signer")
@@ -203,7 +201,6 @@ def main_pades():
 
     progress_var = IntVar()
     progress_label = Label(root, text="Processing...")
-    progress_bar = Progressbar(root, variable=progress_var, maximum=600000)
 
     refresh_button = Button(root, text="Refresh USB Devices", command=lambda: update_usb_devices(usb_path_entry))
     refresh_button.grid(row=5, column=0, columnspan=3, padx=10, pady=5, sticky="ew")

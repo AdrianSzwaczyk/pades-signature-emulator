@@ -139,7 +139,7 @@ Functions</h2></td></tr>
 <li>Key name for the generated keys Those inputs are validated and if error occurs, it shows a specific error message.</li>
 </ul>
 <p>If the data is correct, it proceeds to generate RSA keys using the <a class="el" href="namespacekey__generation.html#ae3c417929d3fd7844f3de9d675ddeafc" title="Generating two RSA keys: a private key and a public key (4096 bits).">generate_rsa_keys()</a> function from <a class="el" href="key__generation_8py.html" title="Contains the function to generate RSA keys in .PEM format.">key_generation.py</a> file. The generated keys are then encrypted using the <a class="el" href="namespacekey__encryption.html#aae51bf239682808787b2bcc9306d187b" title="Encrypts a private key using AES symetric encryption, where the encryption key is the user-provided P...">encrypt_private_key()</a> function from <a class="el" href="key__encryption_8py.html" title="Contains the function to encrypt a private key using AES symmetric encryption with a PIN given by the...">key_encryption.py</a> file, where the PIN is used to derive the encryption key. After encryption, the keys are saved using the <a class="el" href="namespacekey__saving.html#af528c23f394abadd10446e40f9f2af91" title="Function is responsible for saving the private key on the USB device and public key in specified by t...">save_keys()</a> function from <a class="el" href="key__saving_8py.html" title="Contains the function to save RSA keys to a USB device and a specified path.">key_saving.py</a> file, where the private key is saved on the USB device and the public key is saved in the specified path.</p>
-<p>During the process, the GUI is updated to show progress bar and status messages. If any step fails, an error message is displayed, so that the user can be informed about all the issues during the process.</p>
+<p>During the process, the GUI is updated to show status messages. If any step fails, an error message is displayed, so that the user can be informed about all the issues during the process.</p>
 <p>If the keys are successfully generated, encrypted, and saved, a success message is displayed with the paths to the saved keys and information about any other action taken, such as clearing keys directory on the USB drive. </p>
 
 </div>
@@ -160,7 +160,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Function handles the generate button click event in the GUI. </p>
-<p>Disables GUI inputs, shows a progress bar and loading indicator, and launches the key generation process in a new thread. When the process is complete, it restores the GUI to its original state, enabling inputs and hiding the progress bar. </p>
+<p>Disables GUI inputs, shows a progress messages and loading indicator, and launches the key generation process in a new thread. When the process is complete, it restores the GUI to its original state, enabling inputs and hiding progress messages. </p>
 
 </div>
 </div>
@@ -181,7 +181,7 @@ Functions</h2></td></tr>
 
 <p>Initializes the GUI for the RSA key generation application. </p>
 <p>Creates all necessary components and starts the Tkinter main loop.</p>
-<p>This function sets up the main window, adds labels, entry fields, buttons, and a progress bar. All the components are arranged and configured to allow the user to enter a key name, a PIN for the private key, select a USB drive, and specify a path for saving the public key. </p>
+<p>This function sets up the main window, adds labels, entry fields and buttons. All the components are arranged and configured to allow the user to enter a key name, a PIN for the private key, select a USB drive, and specify a path for saving the public key. </p>
 
 </div>
 </div>

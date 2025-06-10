@@ -46,7 +46,7 @@ This function retrieves user inputs from the GUI, which includes\+:
 
 If the data is correct, it proceeds to generate RSA keys using the \doxylink{namespacekey__generation_ae3c417929d3fd7844f3de9d675ddeafc}{generate\+\_\+rsa\+\_\+keys()} function from \doxylink{key__generation_8py}{key\+\_\+generation.\+py} file. The generated keys are then encrypted using the \doxylink{namespacekey__encryption_aae51bf239682808787b2bcc9306d187b}{encrypt\+\_\+private\+\_\+key()} function from \doxylink{key__encryption_8py}{key\+\_\+encryption.\+py} file, where the PIN is used to derive the encryption key. After encryption, the keys are saved using the \doxylink{namespacekey__saving_af528c23f394abadd10446e40f9f2af91}{save\+\_\+keys()} function from \doxylink{key__saving_8py}{key\+\_\+saving.\+py} file, where the private key is saved on the USB device and the public key is saved in the specified path.
 
-During the process, the GUI is updated to show progress bar and status messages. If any step fails, an error message is displayed, so that the user can be informed about all the issues during the process.
+During the process, the GUI is updated to show status messages. If any step fails, an error message is displayed, so that the user can be informed about all the issues during the process.
 
 If the keys are successfully generated, encrypted, and saved, a success message is displayed with the paths to the saved keys and information about any other action taken, such as clearing keys directory on the USB drive. \Hypertarget{namespacersa__gui_aa755bad780da7e23e4297cbf94c7e971}\label{namespacersa__gui_aa755bad780da7e23e4297cbf94c7e971} 
 \index{rsa\_gui@{rsa\_gui}!handle\_generate\_button\_click@{handle\_generate\_button\_click}}
@@ -58,7 +58,7 @@ If the keys are successfully generated, encrypted, and saved, a success message 
 
 Function handles the generate button click event in the GUI. 
 
-Disables GUI inputs, shows a progress bar and loading indicator, and launches the key generation process in a new thread. When the process is complete, it restores the GUI to its original state, enabling inputs and hiding the progress bar. \Hypertarget{namespacersa__gui_ac5ef91c272602ded37a99ba4819fb9e7}\label{namespacersa__gui_ac5ef91c272602ded37a99ba4819fb9e7} 
+Disables GUI inputs, shows a progress messages and loading indicator, and launches the key generation process in a new thread. When the process is complete, it restores the GUI to its original state, enabling inputs and hiding progress messages. \Hypertarget{namespacersa__gui_ac5ef91c272602ded37a99ba4819fb9e7}\label{namespacersa__gui_ac5ef91c272602ded37a99ba4819fb9e7} 
 \index{rsa\_gui@{rsa\_gui}!main\_rsa@{main\_rsa}}
 \index{main\_rsa@{main\_rsa}!rsa\_gui@{rsa\_gui}}
 \doxysubsubsection{\texorpdfstring{main\_rsa()}{main\_rsa()}}
@@ -70,7 +70,7 @@ Initializes the GUI for the RSA key generation application.
 
 Creates all necessary components and starts the Tkinter main loop.
 
-This function sets up the main window, adds labels, entry fields, buttons, and a progress bar. All the components are arranged and configured to allow the user to enter a key name, a PIN for the private key, select a USB drive, and specify a path for saving the public key. \Hypertarget{namespacersa__gui_afa17e1e44e7557b8ac8e7923e0236cb3}\label{namespacersa__gui_afa17e1e44e7557b8ac8e7923e0236cb3} 
+This function sets up the main window, adds labels, entry fields and buttons. All the components are arranged and configured to allow the user to enter a key name, a PIN for the private key, select a USB drive, and specify a path for saving the public key. \Hypertarget{namespacersa__gui_afa17e1e44e7557b8ac8e7923e0236cb3}\label{namespacersa__gui_afa17e1e44e7557b8ac8e7923e0236cb3} 
 \index{rsa\_gui@{rsa\_gui}!update\_usb\_devices@{update\_usb\_devices}}
 \index{update\_usb\_devices@{update\_usb\_devices}!rsa\_gui@{rsa\_gui}}
 \doxysubsubsection{\texorpdfstring{update\_usb\_devices()}{update\_usb\_devices()}}

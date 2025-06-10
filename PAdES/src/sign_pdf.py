@@ -41,7 +41,7 @@ def sign_pdf(pdf_path, private_key_bytes):
         signature = pkcs1_15.new(key).sign(digest) # RSA signature of the digest
 
         writer.add_metadata({
-            "/SignedBy": "User A",
+            "/SignedBy": "User",
             "/Signature": signature.hex(),
             "/Digest": digest.hexdigest()
         })

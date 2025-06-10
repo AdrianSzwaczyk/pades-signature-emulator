@@ -47,8 +47,8 @@ def decrypt_private_key(usb_path, pin, progress_callback):
         iterations = 600000
         
         key = PBKDF2(pin, salt, dkLen=32, count=iterations)
+        
         progress_callback("Decrypting...")  
-
         cipher = AES.new(key, AES.MODE_EAX, nonce=nonce)
         private_key = cipher.decrypt_and_verify(ciphertext, tag)
         return private_key
